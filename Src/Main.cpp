@@ -129,7 +129,7 @@ void CALLBACK Init(void *pParametr)
 	mainMenu.AddElement(new MenuButton(Position(350,50,0),Size(64,64),pExitButton,click,cursorOn,NORMALSTATE,"exit"));
 
 	pResourceManager->Load("..\\Data\\fonts\\font1.dft",(IEngBaseObj*&)font);
-	newLabel = MenuLabel("Label",font,TColor4(0,0,0,255),TColor4(244,32,32,255),TColor4(75,9,166,255),TColor4(48,100),pExitButton,Position(30,30,0),Size(300,100),NORMALSTATE);
+	newLabel = MenuLabel("Label",font,TColor4(0,0,0,255),TColor4(244,32,32,255),TColor4(75,9,166,255),TColor4(48,100),pExitButton,Position(300,300,0),Size(300,100),NORMALSTATE);
 	mainMenu.AddElement(&newLabel);
 
 	mainMenu.PlayMusic(true);

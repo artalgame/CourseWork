@@ -2,49 +2,32 @@ DGLE2 Engine Log File
 Version: Beta 2 (Tue Mar 15 18:46:31 2011)
 Visit http://dgle.deeprosoft.com/ for more information.
 Log Started at 22.11.2011.
-10:04:49.364 - Initializing Engine...
-10:04:49.369 - Engine extension plugin "DGLE2_EXT.dplug" found.
-10:04:49.395 - Plugin "DGLE2_EXT Beta 2 (Mar 17 2011)" by "DGLE2 Team" connected succesfully.
-10:04:49.395 - Plugin description: "Standart official DGLE2 extension plugin. Provides support for various file formats and engine extensions."
-10:04:50.193 - Splash window created.
+12:46:46.710 - Initializing Engine...
+12:46:46.710 - Engine extension plugin "DGLE2_EXT.dplug" found.
+12:46:46.742 - Plugin "DGLE2_EXT Beta 2 (Mar 17 2011)" by "DGLE2 Team" connected succesfully.
+12:46:46.742 - Plugin description: "Standart official DGLE2 extension plugin. Provides support for various file formats and engine extensions."
+12:46:47.490 - Splash window created.
 System Information
-	Operating System: 6.1 "Microsoft Windows 7 Ultimate Edition"  (Build 7600), 32-bit
-	CPU: AMD Athlon(tm) II P320 Dual-Core Processor (~2094 Mhz X 2)
-	RAM Total: 3578 MB.
-	RAM Available: 2182 MB.
-	Video device: ATI Mobility Radeon HD 5470 512 MB. (driver "atiu9pag.dll,atiuxpag.dll,atiuxpag.dll,atiumdva.cap", ver. 8.14.0001.6099, date 29.03.2010 2:45:28)
-10:04:50.606 - Window created successfully.
-10:04:50.607 - Filesystem Subsystem initialized.
-10:04:50.608 - Initializing RenderGL Subsystem...
-10:04:51.558 - OpenGL 3.2.9712 Compatibility Profile Context on ATI Mobility Radeon HD 5470(ATI Technologies Inc.)
-10:04:51.559 - Maximum texture resolution: 16384X16384
-10:04:51.559 - Maximum anisotropy level: 16X
-10:04:51.560 - Maximum multitexturing layer: 16
-10:04:51.560 - RenderGL Subsystem initialized.
-10:04:51.588 - Resource Manager Subsystem initialized.
-10:04:51.938 - DirectSound initialized.
-10:04:51.938 - Sound Subsystem initialized.
-10:04:51.961 - DirectInput initialized.
-10:04:51.962 - Input Subsystem initialized.
-10:04:51.962 - Engine Initialized.
-10:04:51.963 - Calling user initialization procedure...
-10:04:52.958 - Done.
-10:04:52.990 - Render mode (Viewport: 800X600, WinCtrlAccess: Full) has been set properly.
-10:04:52.993 - **Entering main loop**
-10:05:01.394 - **Exiting main loop**
-10:05:01.395 - Finalizing Engine...
-10:05:01.395 - Calling user finalization procedure...
-10:05:01.395 - Done.
-10:05:01.397 - Plugin "DGLE2_EXT" disconnected succesfully.
-10:05:01.590 - OpenGL Rendering and Device contexts finalized.
-10:05:01.593 - Resource Manager Subsystem finalized.
-10:05:01.594 - Input Subsystem finalized.
-10:05:01.669 - Sound Subsystem finalized.
-10:05:01.669 - RenderGL Subsystem finalized.
-10:05:01.669 - Filesystem Subsystem finalized.
-10:05:01.670 - Window closed properly.
-10:05:01.670 - Engine Finalized.
-----
-Warning(s): 0 Error(s): 0
-Average FPS: 268
-Log Closed.
+	Operating System: 6.1 "Microsoft Windows 7 Ultimate Edition" Service Pack 1 (Build 7601), 64-bit
+	CPU: Intel(R) Core(TM) i5 CPU       M 430  @ 2.27GHz (~2261 Mhz X 4)
+	RAM Total: 2991 MB.
+	RAM Available: 1260 MB.
+	Video device: ATI Mobility Radeon HD 4300/4500 Series 512 MB. (driver "aticfx64.dll,aticfx64.dll,aticfx32,aticfx32,atiumd64.dll,atidxx64.dll,atiumdag,atidxx32,atiumdva,atiumd6a.cap,atitmm64.dll", ver. 8.17.0010.1086, date 08.07.2011 5:28:26)
+12:46:49.144 - Window created successfully.
+12:46:49.144 - Filesystem Subsystem initialized.
+12:46:49.144 - Initializing RenderGL Subsystem...
+12:46:51.047 - OpenGL 3.3.10907 Compatibility Profile Context on ATI Mobility Radeon HD 4300/4500 Series(ATI Technologies Inc.)
+12:46:51.047 - Maximum texture resolution: 8192X8192
+12:46:51.047 - Maximum anisotropy level: 16X
+12:46:51.047 - Maximum multitexturing layer: 16
+12:46:51.047 - RenderGL Subsystem initialized.
+12:46:51.110 - Resource Manager Subsystem initialized.
+12:46:51.234 - DirectSound initialized.
+12:46:51.234 - Sound Subsystem initialized.
+12:46:51.344 - DirectInput initialized.
+12:46:51.344 - Input Subsystem initialized.
+12:46:51.359 - Engine Initialized.
+12:46:51.359 - Calling user initialization procedure...
+12:46:53.321 - Done.
+12:46:53.362 - Render mode (Viewport: 800X600, WinCtrlAccess: Full) has been set properly.
+12:46:53.365 - **Entering main loop**
