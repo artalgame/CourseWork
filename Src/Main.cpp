@@ -119,6 +119,9 @@ void CALLBACK Init(void *pParametr)
 	pResourceManager->Load("..\\Data\\textures\\buttons\\singlePlayerBut.jpg",(IEngBaseObj*&)pExitButton);
 	mainMenu.AddElement(new MenuButton(Position(50,50,0),Size(64,64),pExitButton,click,cursorOn,NORMALSTATE,"single player"));
 
+	pResourceManager->Load("..\\Data\\textures\\buttons\\singlePlayerBut.jpg",(IEngBaseObj*&)pExitButton);
+	mainMenu.AddElement(new MenuButton(Position(150,150,0),Size(64,64),pExitButton,click,cursorOn,NORMALSTATE,"Great button"));
+
 	pResourceManager->Load("..\\Data\\textures\\buttons\\multiPlayerBut.jpg",(IEngBaseObj*&)pExitButton);
 	mainMenu.AddElement(new MenuButton(Position(150,50,0),Size(64,64),pExitButton,click,cursorOn,DEACTIVE,"multi player"));
 
