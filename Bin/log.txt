@@ -1,33 +1,50 @@
 DGLE2 Engine Log File
 Version: Beta 2 (Tue Mar 15 18:46:31 2011)
 Visit http://dgle.deeprosoft.com/ for more information.
-Log Started at 22.11.2011.
-12:46:46.710 - Initializing Engine...
-12:46:46.710 - Engine extension plugin "DGLE2_EXT.dplug" found.
-12:46:46.742 - Plugin "DGLE2_EXT Beta 2 (Mar 17 2011)" by "DGLE2 Team" connected succesfully.
-12:46:46.742 - Plugin description: "Standart official DGLE2 extension plugin. Provides support for various file formats and engine extensions."
-12:46:47.490 - Splash window created.
+Log Started at 24.11.2011.
+12:51:31.524 - Initializing Engine...
+12:51:31.524 - Engine extension plugin "DGLE2_EXT.dplug" found.
+12:51:31.544 - Plugin "DGLE2_EXT Beta 2 (Mar 17 2011)" by "DGLE2 Team" connected succesfully.
+12:51:31.544 - Plugin description: "Standart official DGLE2 extension plugin. Provides support for various file formats and engine extensions."
+12:51:32.424 - Splash window created.
 System Information
-	Operating System: 6.1 "Microsoft Windows 7 Ultimate Edition" Service Pack 1 (Build 7601), 64-bit
-	CPU: Intel(R) Core(TM) i5 CPU       M 430  @ 2.27GHz (~2261 Mhz X 4)
-	RAM Total: 2991 MB.
-	RAM Available: 1260 MB.
-	Video device: ATI Mobility Radeon HD 4300/4500 Series 512 MB. (driver "aticfx64.dll,aticfx64.dll,aticfx32,aticfx32,atiumd64.dll,atidxx64.dll,atiumdag,atidxx32,atiumdva,atiumd6a.cap,atitmm64.dll", ver. 8.17.0010.1086, date 08.07.2011 5:28:26)
-12:46:49.144 - Window created successfully.
-12:46:49.144 - Filesystem Subsystem initialized.
-12:46:49.144 - Initializing RenderGL Subsystem...
-12:46:51.047 - OpenGL 3.3.10907 Compatibility Profile Context on ATI Mobility Radeon HD 4300/4500 Series(ATI Technologies Inc.)
-12:46:51.047 - Maximum texture resolution: 8192X8192
-12:46:51.047 - Maximum anisotropy level: 16X
-12:46:51.047 - Maximum multitexturing layer: 16
-12:46:51.047 - RenderGL Subsystem initialized.
-12:46:51.110 - Resource Manager Subsystem initialized.
-12:46:51.234 - DirectSound initialized.
-12:46:51.234 - Sound Subsystem initialized.
-12:46:51.344 - DirectInput initialized.
-12:46:51.344 - Input Subsystem initialized.
-12:46:51.359 - Engine Initialized.
-12:46:51.359 - Calling user initialization procedure...
-12:46:53.321 - Done.
-12:46:53.362 - Render mode (Viewport: 800X600, WinCtrlAccess: Full) has been set properly.
-12:46:53.365 - **Entering main loop**
+	Operating System: 6.1 "Microsoft Windows 7 Ultimate Edition"  (Build 7600), 32-bit
+	CPU: AMD Athlon(tm) II P320 Dual-Core Processor (~2094 Mhz X 2)
+	RAM Total: 3578 MB.
+	RAM Available: 1804 MB.
+	Video device: ATI Mobility Radeon HD 5470 512 MB. (driver "atiu9pag.dll,atiuxpag.dll,atiuxpag.dll,atiumdva.cap", ver. 8.14.0001.6099, date 29.03.2010 2:45:28)
+12:51:32.684 - Window created successfully.
+12:51:32.684 - Filesystem Subsystem initialized.
+12:51:32.684 - Initializing RenderGL Subsystem...
+12:51:33.684 - OpenGL 3.2.9712 Compatibility Profile Context on ATI Mobility Radeon HD 5470(ATI Technologies Inc.)
+12:51:33.684 - Maximum texture resolution: 16384X16384
+12:51:33.684 - Maximum anisotropy level: 16X
+12:51:33.684 - Maximum multitexturing layer: 16
+12:51:33.684 - RenderGL Subsystem initialized.
+12:51:33.704 - Resource Manager Subsystem initialized.
+12:51:33.784 - DirectSound initialized.
+12:51:33.784 - Sound Subsystem initialized.
+12:51:33.794 - DirectInput initialized.
+12:51:33.804 - Input Subsystem initialized.
+12:51:33.804 - Engine Initialized.
+12:51:33.804 - Calling user initialization procedure...
+12:51:34.923 - Done.
+12:51:34.995 - Render mode (Viewport: 800X600, WinCtrlAccess: Full) has been set properly.
+12:51:34.999 - **Entering main loop**
+12:51:39.318 - **Exiting main loop**
+12:51:39.318 - Finalizing Engine...
+12:51:39.319 - Calling user finalization procedure...
+12:51:39.321 - Done.
+12:51:39.324 - Plugin "DGLE2_EXT" disconnected succesfully.
+12:51:39.500 - OpenGL Rendering and Device contexts finalized.
+12:51:39.505 - Resource Manager Subsystem finalized.
+12:51:39.507 - Input Subsystem finalized.
+12:51:39.581 - Sound Subsystem finalized.
+12:51:39.591 - RenderGL Subsystem finalized.
+12:51:39.591 - Filesystem Subsystem finalized.
+12:51:39.591 - Window closed properly.
+12:51:39.591 - Engine Finalized.
+----
+Warning(s): 0 Error(s): 0
+Average FPS: 234
+Log Closed.

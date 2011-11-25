@@ -36,6 +36,12 @@
     <ClCompile Include="MenuLabel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MenuDropList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MenuButton.h">
@@ -54,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuLabel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuDropList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

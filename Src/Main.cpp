@@ -4,6 +4,8 @@
 #include"MenuButton.h"
 #include"MenuClass.h"
 #include"MenuLabel.h"
+#include"MenuDropList.h"
+#include"MainClass.h"
 
 using namespace DGLE2;
 using namespace std;
@@ -12,7 +14,6 @@ void CALLBACK Init(void *pParametr);
 void CALLBACK Process(void *pParametr);
 void CALLBACK Render(void *pParametr);
 void CALLBACK Free(void *pParametr);
-
 
 IEngineCore *pEngineCore = NULL;
 IResourceManager *pResourceManager = NULL;

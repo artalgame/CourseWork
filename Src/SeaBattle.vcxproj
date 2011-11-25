@@ -77,16 +77,20 @@
   <ItemGroup>
     <ClCompile Include="DrawObject.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainClass.cpp" />
     <ClCompile Include="MenuButton.cpp" />
     <ClCompile Include="MenuClass.cpp" />
+    <ClCompile Include="MenuDropList.cpp" />
     <ClCompile Include="MenuLabel.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="size.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawObject.h" />
+    <ClInclude Include="MainClass.h" />
     <ClInclude Include="MenuButton.h" />
     <ClInclude Include="MenuClass.h" />
+    <ClInclude Include="MenuDropList.h" />
     <ClInclude Include="MenuLabel.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="size.h" />
