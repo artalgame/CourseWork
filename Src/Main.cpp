@@ -4,6 +4,7 @@
 #include"MenuButton.h"
 #include"MenuClass.h"
 #include"MenuLabel.h"
+#include"MenuEdit.h"
 
 using namespace DGLE2;
 using namespace std;
@@ -26,6 +27,7 @@ IMusic* cursorOn;
 MenuButton button;
 MenuClass mainMenu;
 MenuLabel newLabel;
+MenuEdit* newEdit;
 
 bool isMouseClicked = false;
 bool isMousePressed = false;
@@ -109,7 +111,6 @@ void CALLBACK Init(void *pParametr)
 
 	pRender->GetRender2D(pRender2D);
 
-	
 	pResourceManager->Load("..\\Data\\music\\FonMusic1.mp3",(IEngBaseObj*&)pFonMusic);
 	pResourceManager->Load("..\\Data\\sounds\\buttons\\click.mp3",(IEngBaseObj*&)click);
 	pResourceManager->Load("..\\Data\\sounds\\buttons\\CursorOn.mp3",(IEngBaseObj*&)cursorOn);

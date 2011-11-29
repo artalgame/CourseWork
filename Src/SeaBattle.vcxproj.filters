@@ -36,6 +36,9 @@
     <ClCompile Include="MenuLabel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MenuEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MenuButton.h">
@@ -56,5 +59,11 @@
     <ClInclude Include="MenuLabel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MenuEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
 </Project>
