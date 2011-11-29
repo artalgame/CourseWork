@@ -27,7 +27,7 @@ IMusic* cursorOn;
 MenuButton button;
 MenuClass mainMenu;
 MenuLabel newLabel;
-MenuEdit* newEdit;
+MenuEdit newEdit;
 
 bool isMouseClicked = false;
 bool isMousePressed = false;
@@ -111,7 +111,7 @@ void CALLBACK Init(void *pParametr)
 
 	pRender->GetRender2D(pRender2D);
 
-	pResourceManager->Load("..\\Data\\music\\FonMusic1.mp3",(IEngBaseObj*&)pFonMusic);
+	pResourceManager->Load("..\\Data\\music\\FonMusic2.mp3",(IEngBaseObj*&)pFonMusic);
 	pResourceManager->Load("..\\Data\\sounds\\buttons\\click.mp3",(IEngBaseObj*&)click);
 	pResourceManager->Load("..\\Data\\sounds\\buttons\\CursorOn.mp3",(IEngBaseObj*&)cursorOn);
 	pResourceManager->Load("..\\Data\\textures\\fon1.jpg",(IEngBaseObj*&)pExitButton);
@@ -135,6 +135,9 @@ void CALLBACK Init(void *pParametr)
 	pResourceManager->Load("..\\Data\\fonts\\font1.dft",(IEngBaseObj*&)font);
 	newLabel = MenuLabel("Label",font,TColor4(0,0,0,255),TColor4(244,32,32,255),TColor4(75,9,166,255),TColor4(48,100),pExitButton,Position(300,300,0),Size(300,100),NORMALSTATE);
 	mainMenu.AddElement(&newLabel);
+
+	newEdit = MenuEdit(pExitButton, "", font, pInput, Position(100, 100, 0), Size(200, 30), NORMALSTATE);
+	mainMenu.AddElement(&newEdit);
 
 	mainMenu.PlayMusic(true);
 }
