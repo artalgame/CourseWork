@@ -24,9 +24,6 @@
     <ClCompile Include="size.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Position.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MenuClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -42,15 +39,15 @@
     <ClCompile Include="MainClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MenuButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="size.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Position.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuClass.h">
@@ -66,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MainClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

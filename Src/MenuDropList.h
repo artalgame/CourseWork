@@ -29,7 +29,7 @@ public:
 		MenuButton* button ,int countOfElement,IBitmapFont* font,ITexture* image);
 
 	//virtual methods of DrawObject class
-	void Process(Position mousePos,bool isClicked,bool isPressed);
+	void Process(Position mousePos,bool isClicked,bool isPressed,char* _char=NULL);
 	void Draw();
 	State GetState();
 	void SetState(State state);

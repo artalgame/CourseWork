@@ -20,13 +20,9 @@ IResourceManager *pResourceManager = NULL;
 IRender2D *pRender2D = NULL;
 IRender *pRender = NULL;
 IInput *pInput = NULL;
-ITexture *pExitButton = NULL;
-IMusic *pFonMusic = NULL;
-IMusic* click;
-IMusic* cursorOn;
-MenuButton button;
-MenuClass mainMenu;
-MenuLabel newLabel;
+MainClass main;
+
+
 
 bool isMouseClicked = false;
 bool isMousePressed = false;
@@ -58,114 +54,34 @@ ENG_DYNAMIC_FUNC
 	return 0;
 }
 
-void ProcessTitle()
-{
-	TMouseStates mouseState;
-
-	pInput->GetMouseStates(mouseState);
-	if(mouseState.bLeftButton)
-	{
-		isMousePressed = true;
-
-	}
-	else
-		if (isMousePressed)
-		{
-			isMouseClicked = true;
-			isMousePressed = false;
-		}
-		else
-		{
-			isMouseClicked = false;
-			isMousePressed = false;
-		}
-
-		mainMenu.Process(Position(mouseState.iX,mouseState.iY,0),isMouseClicked,isMousePressed);
-		if(mainMenu.GetElement(3)->GetState() == PRESSED)
-		{
-			pEngineCore->QuitEngine();
-		}
-}
-
-void RenderTitle()
-{
-	mainMenu.Draw();
-}
-
-void ProcessGame()
-{
-}
-
-void RenderGame()
-{
-}
-
 void CALLBACK Init(void *pParametr)
 {
-	IBitmapFont* font;
-
+	
 	pEngineCore->GetSubSystem(ESS_RESOURCE_MANAGER, (IEngineSubSystem *&)pResourceManager);
 	pEngineCore->GetSubSystem(ESS_RENDER, (IEngineSubSystem *&)pRender);
 	pEngineCore->GetSubSystem(ESS_INPUT, (IEngineSubSystem *&)pInput);
 
 	pRender->GetRender2D(pRender2D);
 
-	
-	pResourceManager->Load("..\\Data\\music\\FonMusic1.mp3",(IEngBaseObj*&)pFonMusic);
-	pResourceManager->Load("..\\Data\\sounds\\buttons\\click.mp3",(IEngBaseObj*&)click);
-	pResourceManager->Load("..\\Data\\sounds\\buttons\\CursorOn.mp3",(IEngBaseObj*&)cursorOn);
-	pResourceManager->Load("..\\Data\\textures\\fon1.jpg",(IEngBaseObj*&)pExitButton);
-
-	mainMenu = MenuClass(pExitButton,pFonMusic,Position(0,0,0),Size(800,600),NORMALSTATE);
-	pResourceManager->Load("..\\Data\\textures\\buttons\\singlePlayerBut.jpg",(IEngBaseObj*&)pExitButton);
-	mainMenu.AddElement(new MenuButton(Position(50,50,0),Size(64,64),pExitButton,click,cursorOn,NORMALSTATE,"single player"));
-
-	pResourceManager->Load("..\\Data\\textures\\buttons\\singlePlayerBut.jpg",(IEngBaseObj*&)pExitButton);
-	mainMenu.AddElement(new MenuButton(Position(150,150,0),Size(64,64),pExitButton,click,cursorOn,NORMALSTATE,"Great button"));
-
-	pResourceManager->Load("..\\Data\\textures\\buttons\\multiPlayerBut.jpg",(IEngBaseObj*&)pExitButton);
-	mainMenu.AddElement(new MenuButton(Position(150,50,0),Size(64,64),pExitButton,click,cursorOn,DEACTIVE,"multi player"));
-
-	pResourceManager->Load("..\\Data\\textures\\buttons\\settingBut.jpg",(IEngBaseObj*&)pExitButton);
-	mainMenu.AddElement(new MenuButton(Position(250,50,0),Size(64,64),pExitButton,click,cursorOn,DEACTIVE,"settings"));
-
-	pResourceManager->Load("..\\Data\\textures\\buttons\\exitBut.jpg",(IEngBaseObj*&)pExitButton);
-	mainMenu.AddElement(new MenuButton(Position(350,50,0),Size(64,64),pExitButton,click,cursorOn,NORMALSTATE,"exit"));
-
-	pResourceManager->Load("..\\Data\\fonts\\font1.dft",(IEngBaseObj*&)font);
-	newLabel = MenuLabel("Label",font,TColor4(0,0,0,255),TColor4(244,32,32,255),TColor4(75,9,166,255),TColor4(48,100),pExitButton,Position(300,300,0),Size(300,100),NORMALSTATE);
-	mainMenu.AddElement(&newLabel);
-
-	mainMenu.PlayMusic(true);
+	main = MainClass(pEngineCore, pResourceManager, pRender2D, pRender, pInput);
+	main.LOADER();
 }
 
 void CALLBACK Render(void *pParametr)
 {
 	pRender2D->Begin2D();
-	if(!bIsGame)
-		RenderTitle();
-	else
-		RenderGame();
+	main.DRAW();
 	pRender2D->End2D();
 }
 
 void CALLBACK Process(void *pParametr)
 {
-	if(bIsGame)
-		ProcessGame();
-	else
-		ProcessTitle();
-
-	bool key_pressed;
-	pInput->GetKey(KEY_ESCAPE, key_pressed);
-	if(key_pressed) pEngineCore->QuitEngine();
-
-	uiCounter++;
+	main.PROCESS();
 }
 
 
 void CALLBACK Free(void *pParametr)
 {
-
+	main.FINALIZATOR();
 }
 

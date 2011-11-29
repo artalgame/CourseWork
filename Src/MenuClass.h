@@ -15,13 +15,14 @@ class MenuClass :public DrawObject
 protected:
 	vector<DrawObject*> _objectList;
 	int _countOfObject;
-	ITexture* _fonImage;
+	
 	IMusic* _fonMusic;
 public:
+	ITexture* _fonImage;
 	MenuClass(void);
 	MenuClass(ITexture* fonImage, IMusic* fonMusic,Position pos, Size size,State state);
 
-	void Process(Position mousePos,bool isClicked,bool isPressed);
+	void Process(Position mousePos,bool isClicked,bool isPressed,char* _char=NULL);
 	void AddElement(DrawObject* newObject);
 	DrawObject* GetElement(int index);
 	void PlayMusic(bool isLoop);

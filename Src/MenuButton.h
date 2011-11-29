@@ -24,7 +24,7 @@ public:
 	void SetTexture(ITexture *image);
     State GetState();
 	void SetState(State state);
-	void Process(Position mousePos,bool isClicked,bool isPressed);
+	void Process(Position mousePos,bool isClicked,bool isPressed,char* _char=NULL);
 	void Draw();//draw button
 	~MenuButton(void);
 };

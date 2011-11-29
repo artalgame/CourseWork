@@ -43,7 +43,7 @@ ITexture* MenuButton::GetTexture()
 	return _image;
 }
 
-void MenuButton::Process(Position mousePos,bool isClicked,bool isPressed)//in code which will use this method must be realize verification of click
+void MenuButton::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)//in code which will use this method must be realize verification of click
 {
 	if(_state != DEACTIVE)
 	{

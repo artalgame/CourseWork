@@ -52,7 +52,7 @@ void MenuLabel::Draw()
 	}
 }
 
-void MenuLabel::Process(Position mousePos,bool isClicked,bool isPressed)
+void MenuLabel::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 {
 	if(_state != DEACTIVE)
 	{

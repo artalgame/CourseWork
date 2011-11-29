@@ -41,7 +41,7 @@ void MenuClass::StopMusic()
 {
 	_fonMusic->Stop();
 }
-void MenuClass::Process(Position mousePos,bool isClicked,bool isPressed)
+void MenuClass::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 {
 	if((mousePos.GetX()>=_position.GetX())
 		&&(mousePos.GetX()<=_position.GetX()+_size.GetWidth())
