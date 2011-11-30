@@ -70,6 +70,7 @@ void ProcessTitle()
 
 	}
 	else
+	{
 		if (isMousePressed)
 		{
 			isMouseClicked = true;
@@ -80,6 +81,7 @@ void ProcessTitle()
 			isMouseClicked = false;
 			isMousePressed = false;
 		}
+	}
 
 		mainMenu.Process(Position(mouseState.iX,mouseState.iY,0),isMouseClicked,isMousePressed);
 		if(mainMenu.GetElement(3)->GetState() == PRESSED)
@@ -136,7 +138,7 @@ void CALLBACK Init(void *pParametr)
 	newLabel = MenuLabel("Label",font,TColor4(0,0,0,255),TColor4(244,32,32,255),TColor4(75,9,166,255),TColor4(48,100),pExitButton,Position(300,300,0),Size(300,100),NORMALSTATE);
 	mainMenu.AddElement(&newLabel);
 
-	newEdit = MenuEdit(pExitButton, "", font, pInput, Position(100, 100, 0), Size(200, 30), NORMALSTATE);
+	newEdit = MenuEdit(pExitButton, "Input name", font, pInput, Position(100, 100, 0), Size(200, 30), NORMALSTATE);
 	mainMenu.AddElement(&newEdit);
 
 	mainMenu.PlayMusic(true);
