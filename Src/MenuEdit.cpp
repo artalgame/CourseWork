@@ -8,6 +8,7 @@ MenuEdit::MenuEdit(void):DrawObject()
 	_inputCharCounter = 0;
 	_color = new TColor4(0, 0, 0, 255);
 	_isMarkered = false;
+	_isWrited = true;
 }
 
 MenuEdit::MenuEdit(ITexture* backgroundImage, string text, IBitmapFont* font, IInput* input,  Position pos, Size size, State state, TColor4* color):DrawObject(pos, size, state)
@@ -19,6 +20,7 @@ MenuEdit::MenuEdit(ITexture* backgroundImage, string text, IBitmapFont* font, II
 	_color = color;
 	_inputCharCounter = 0;
 	_isMarkered = false;
+	_isWrited = true;
 }
 
 void MenuEdit::Draw(void)
@@ -32,6 +34,11 @@ void MenuEdit::Draw(void)
 		_font->GetTextDimensions("|", x1, y1);
 		if (_text.length() != 0)
 			_font->GetTextDimensions(_text.c_str() ,x1,y1);
+		if (((x1 + 2 * ((_text.length() > 0)?(x1 / _text.length()):0)) <= _size.GetWidth()) && (y1 <= _size.GetHeight()))
+			_isWrited = true;
+		else 
+			_isWrited = false;
+
 		x = _position.GetX()+(_size.GetWidth()-x1)/2;
 		y = _position.GetY()+(_size.GetHeight()-y1)/2;
 
@@ -66,7 +73,6 @@ void MenuEdit::Process(Position mousePos,bool isClicked,bool isPressed)
 			}
 		}
 
-		//Rewrite char cheking, why previous char isn't pressed
 		if(_state == ACTIVE)
 		{
 			++_inputCharCounter;
@@ -91,7 +97,7 @@ void MenuEdit::Process(Position mousePos,bool isClicked,bool isPressed)
 
 				//Space cheking 
 				_input->GetKey(KEY_SPACE, keypressed);
-				if (keypressed)
+				if (keypressed && _isWrited)
 				{
 					_text.push_back(' ');
 					return;
@@ -105,9 +111,10 @@ void MenuEdit::Process(Position mousePos,bool isClicked,bool isPressed)
 					_input->GetKey((DGLE2::E_KEYBOARD_KEY_CODES)inpKey, keypressed);
 				}
 
+				
 				uchar inpChar;
 				_input->GetKeyName((DGLE2::E_KEYBOARD_KEY_CODES)inpKey, inpChar);
-				if ((inpChar >= 65) && (inpChar <= 90))
+				if ((inpChar >= 65) && (inpChar <= 90) && _isWrited)
 					_text.push_back((char)((isLShiftPressed || isRShiftPressed)?toupper(inpChar):tolower(inpChar)));
 			}
 		}

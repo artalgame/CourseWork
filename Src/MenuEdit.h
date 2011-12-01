@@ -18,6 +18,7 @@ protected:
 	TColor4* _color;
 	int _inputCharCounter;
 	bool _isMarkered;
+	bool _isWrited;
 public:
 	MenuEdit(void);
 	MenuEdit(ITexture* backgroundImage, string text, IBitmapFont* font, IInput* input, Position pos, Size size, State state, TColor4* color = new TColor4(0, 0, 0, 255));

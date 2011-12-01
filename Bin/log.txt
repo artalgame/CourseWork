@@ -1,50 +1,50 @@
 DGLE2 Engine Log File
 Version: Beta 2 (Tue Mar 15 18:46:31 2011)
 Visit http://dgle.deeprosoft.com/ for more information.
-Log Started at 29.11.2011.
-23:07:41.043 - Initializing Engine...
-23:07:41.047 - Engine extension plugin "DGLE2_EXT.dplug" found.
-23:07:41.054 - Plugin "DGLE2_EXT Beta 2 (Mar 17 2011)" by "DGLE2 Team" connected succesfully.
-23:07:41.054 - Plugin description: "Standart official DGLE2 extension plugin. Provides support for various file formats and engine extensions."
-23:07:41.703 - Splash window created.
+Log Started at 1.12.2011.
+10:19:39.412 - Initializing Engine...
+10:19:39.412 - Engine extension plugin "DGLE2_EXT.dplug" found.
+10:19:39.422 - Plugin "DGLE2_EXT Beta 2 (Mar 17 2011)" by "DGLE2 Team" connected succesfully.
+10:19:39.422 - Plugin description: "Standart official DGLE2 extension plugin. Provides support for various file formats and engine extensions."
+10:19:40.089 - Splash window created.
 System Information
 	Operating System: 6.1 "Microsoft Windows 7 Ultimate Edition" Service Pack 1 (Build 7601), 64-bit
 	CPU: Intel(R) Core(TM) i5 CPU       M 430  @ 2.27GHz (~2261 Mhz X 4)
 	RAM Total: 2991 MB.
-	RAM Available: 956 MB.
+	RAM Available: 1017 MB.
 	Video device: ATI Mobility Radeon HD 4300/4500 Series 512 MB. (driver "aticfx64.dll,aticfx64.dll,aticfx32,aticfx32,atiumd64.dll,atidxx64.dll,atiumdag,atidxx32,atiumdva,atiumd6a.cap,atitmm64.dll", ver. 8.17.0010.1086, date 08.07.2011 5:28:26)
-23:07:42.716 - Window created successfully.
-23:07:42.717 - Filesystem Subsystem initialized.
-23:07:42.718 - Initializing RenderGL Subsystem...
-23:07:43.584 - OpenGL 3.3.10907 Compatibility Profile Context on ATI Mobility Radeon HD 4300/4500 Series(ATI Technologies Inc.)
-23:07:43.584 - Maximum texture resolution: 8192X8192
-23:07:43.585 - Maximum anisotropy level: 16X
-23:07:43.585 - Maximum multitexturing layer: 16
-23:07:43.585 - RenderGL Subsystem initialized.
-23:07:43.617 - Resource Manager Subsystem initialized.
-23:07:43.661 - DirectSound initialized.
-23:07:43.662 - Sound Subsystem initialized.
-23:07:43.677 - DirectInput initialized.
-23:07:43.677 - Input Subsystem initialized.
-23:07:43.677 - Engine Initialized.
-23:07:43.677 - Calling user initialization procedure...
-23:07:44.609 - Done.
-23:07:44.638 - Render mode (Viewport: 800X600, WinCtrlAccess: Full) has been set properly.
-23:07:44.640 - **Entering main loop**
-23:08:05.603 - **Exiting main loop**
-23:08:05.603 - Finalizing Engine...
-23:08:05.604 - Calling user finalization procedure...
-23:08:05.604 - Done.
-23:08:05.605 - Plugin "DGLE2_EXT" disconnected succesfully.
-23:08:05.682 - OpenGL Rendering and Device contexts finalized.
-23:08:05.687 - Resource Manager Subsystem finalized.
-23:08:05.688 - Input Subsystem finalized.
-23:08:05.717 - Sound Subsystem finalized.
-23:08:05.717 - RenderGL Subsystem finalized.
-23:08:05.718 - Filesystem Subsystem finalized.
-23:08:05.718 - Window closed properly.
-23:08:05.718 - Engine Finalized.
+10:19:41.604 - Window created successfully.
+10:19:41.604 - Filesystem Subsystem initialized.
+10:19:41.604 - Initializing RenderGL Subsystem...
+10:19:43.368 - OpenGL 3.3.10907 Compatibility Profile Context on ATI Mobility Radeon HD 4300/4500 Series(ATI Technologies Inc.)
+10:19:43.368 - Maximum texture resolution: 8192X8192
+10:19:43.368 - Maximum anisotropy level: 16X
+10:19:43.368 - Maximum multitexturing layer: 16
+10:19:43.368 - RenderGL Subsystem initialized.
+10:19:43.488 - Resource Manager Subsystem initialized.
+10:19:43.598 - DirectSound initialized.
+10:19:43.598 - Sound Subsystem initialized.
+10:19:43.618 - DirectInput initialized.
+10:19:43.628 - Input Subsystem initialized.
+10:19:43.628 - Engine Initialized.
+10:19:43.628 - Calling user initialization procedure...
+10:19:45.073 - Done.
+10:19:45.119 - Render mode (Viewport: 800X600, WinCtrlAccess: Full) has been set properly.
+10:19:45.121 - **Entering main loop**
+10:21:08.377 - **Exiting main loop**
+10:21:08.378 - Finalizing Engine...
+10:21:08.378 - Calling user finalization procedure...
+10:21:08.379 - Done.
+10:21:08.389 - Plugin "DGLE2_EXT" disconnected succesfully.
+10:21:08.501 - OpenGL Rendering and Device contexts finalized.
+10:21:08.501 - Resource Manager Subsystem finalized.
+10:21:08.501 - Input Subsystem finalized.
+10:21:08.541 - Sound Subsystem finalized.
+10:21:08.541 - RenderGL Subsystem finalized.
+10:21:08.541 - Filesystem Subsystem finalized.
+10:21:08.541 - Window closed properly.
+10:21:08.541 - Engine Finalized.
 ----
 Warning(s): 0 Error(s): 0
-Average FPS: 539
+Average FPS: 412
 Log Closed.
