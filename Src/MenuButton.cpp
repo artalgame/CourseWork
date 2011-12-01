@@ -10,6 +10,7 @@ MenuButton::MenuButton(void):DrawObject()
 	_caption = NULL;//text which will characterise our button
 	_playClickSound = false;//If Click sound played yet
 	_playCursorOnSound = false;//If Cursorsound played yet
+	_state1 = _state;
 }
 
 MenuButton::MenuButton(Position pos, Size size,ITexture* image, IMusic* isClick, IMusic* isCursorOn,
@@ -31,7 +32,7 @@ MenuButton::MenuButton(Position pos, Size size,ITexture* image, IMusic* isClick,
 void MenuButton::Draw()
 {
 	if(_image != NULL)
-	_image->Draw2D(_position.GetX(),_position.GetY(),_size.GetWidth(),_size.GetHeight(),_position.GetAngle(),_state);
+	_image->Draw2D(_position.GetX(),_position.GetY(),_size.GetWidth(),_size.GetHeight(),_position.GetAngle(),_state1);
 }
 State MenuButton::GetState()
 {
@@ -54,22 +55,24 @@ void MenuButton::Process(Position mousePos,bool isClicked,bool isPressed,char* _
 		{
 			if(isClicked)
 			{
-				_state = UNDERCURSOR;
-				
-			}
-			else
-			if (isPressed)
-			{
 				_state = PRESSED;
 				if(!(_playClickSound)&&(_isClickSound != NULL))
 				{
 					 _playClickSound = true;
 					_isClickSound->Play(false);
 				}
+				_state1 = UNDERCURSOR;
+			}
+			else
+			if (isPressed)
+			{
+				_state = UNDERCURSOR;
+				_state1 = PRESSED;
 			}
 			else
 			{
 				_state = UNDERCURSOR;
+				_state1 = UNDERCURSOR;
 				if(!(_playCursorOnSound)&&(_isCursorOnSound != NULL))
 				{
 					_playCursorOnSound = true;
@@ -81,9 +84,9 @@ void MenuButton::Process(Position mousePos,bool isClicked,bool isPressed,char* _
 	else
 	{
 		_state = NORMALSTATE;
+		_state1 = NORMALSTATE;
 		_playClickSound = false;
 		_playCursorOnSound = false;
-
 	}
 		
 	}

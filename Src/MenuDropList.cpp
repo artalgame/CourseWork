@@ -11,7 +11,8 @@ DrawObject(pos, size,state)
 	_countOfElement = countOfElement;
 	_indexOfChLabel = -1;
 	_font = font;
-	_button->SetPosition(pos);
+	_button->SetPosition(Position(_position.GetX()+_size.GetWidth(),_position.GetY(),0));
+	_button->SetSize(Size(_size.GetHeight(),_size.GetHeight()));
 	_labelWidth = labelWidth;
 	_labelHeight = labelHeight;
 }
@@ -23,7 +24,10 @@ void MenuDropList::AddNewElement(MenuLabel* newElement)
 	_labelList[	_countOfElement-1]->SetSize(Size(_labelWidth,_labelHeight));
 	_labelList[	_countOfElement-1]->SetPosition(Position(_position.GetX(),_position.GetY()+_size.GetHeight()+(_countOfElement-1)*_labelHeight,0));
 	if(_indexOfChLabel < 0 )
+	{
 		_indexOfChLabel = 0;
+		_caption = _labelList[_indexOfChLabel]->GetCaption();
+	}
 }
 
 void MenuDropList::Draw()
@@ -38,13 +42,13 @@ void MenuDropList::Draw()
 		if((_font != NULL)&&(_indexOfChLabel != -1))
 		{
 			uint x, y;
+			_caption = _labelList[_indexOfChLabel]->GetCaption();
 			_font->GetTextDimensions(_caption,x,y);
 			x = _position.GetX()+(_size.GetWidth()-x)/2;
 			y = _position.GetY()+(_size.GetHeight()-y)/2;
-			_caption = _labelList[_indexOfChLabel]->GetCaption();
 			_font->Draw2D(x,y,_caption,_colorOfText,_position.GetAngle());
 
-			if(_state = UNDERCURSOR)
+			if(_state == UNDERCURSOR)
 			{
 				for(int i=0;i<_countOfElement;i++)
 					_labelList[i]->Draw();
@@ -57,16 +61,16 @@ void MenuDropList::Process(Position mousePos,bool isClicked,bool isPressed,char*
 {
 	if(_state != DEACTIVE)
 	{
-		if(_state = NORMALSTATE)
+		if(_state == NORMALSTATE)
 		{
-			if((mousePos.GetX()>=_position.GetX())
+			/*if((mousePos.GetX()>=_position.GetX())
 				&&(mousePos.GetX()<=_position.GetX()+_size.GetWidth())
 				&&(mousePos.GetY()>=_position.GetY())
 				&&(mousePos.GetY()<=_position.GetY()+_size.GetHeight()))
 			{
 				_state = UNDERCURSOR;
 			}	
-			else
+			else*/
 			{
 				_button->Process(mousePos,isClicked,isPressed);
 				if (_button->GetState() == PRESSED)
@@ -74,10 +78,10 @@ void MenuDropList::Process(Position mousePos,bool isClicked,bool isPressed,char*
 			}
 		}
 		else
-			if(_state = UNDERCURSOR)
+			if(_state == UNDERCURSOR)
 			{
 				if((mousePos.GetX()>=_position.GetX())
-					&&(mousePos.GetX()<=_position.GetX()+_size.GetWidth()+_button->GetSize().GetWidth())
+					&&(mousePos.GetX()<=_position.GetX()+_size.GetWidth())
 					&&(mousePos.GetY()>=_position.GetY())
 					&&(mousePos.GetY()<=_position.GetY()+_size.GetHeight()+_countOfElement*_labelHeight))
 				{
@@ -86,8 +90,12 @@ void MenuDropList::Process(Position mousePos,bool isClicked,bool isPressed,char*
 						_labelList[i]->Process(mousePos,isClicked,isPressed);
 						if(_labelList[i]->GetState() == PRESSED)
 						{
-							_indexOfChLabel = i;
-							break;
+							if(i != _indexOfChLabel)
+							{
+								_labelList[_indexOfChLabel]->SetState(NORMALSTATE);
+								_indexOfChLabel = i;
+								break;
+							}
 						}
 					}
 				}
@@ -96,10 +104,11 @@ void MenuDropList::Process(Position mousePos,bool isClicked,bool isPressed,char*
 					_button->Process(mousePos,isClicked,isPressed);
 					if (_button->GetState() == PRESSED)
 						_state = NORMALSTATE;
+					if(isClicked)
+				_state = NORMALSTATE;
 				}
 			}
-			else
-				_state = NORMALSTATE;
+			
 	}
 }
 

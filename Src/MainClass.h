@@ -31,6 +31,8 @@ private:
 	MenuButton* button;
 	MenuClass* mainMenu;
 	MenuLabel* newLabel;
+	bool isMouseClicked;
+	bool isMousePressed;
 
 public:
 	GameState _gameState;
