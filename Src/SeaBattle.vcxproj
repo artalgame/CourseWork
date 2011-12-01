@@ -81,6 +81,7 @@
     <ClCompile Include="MenuButton.cpp" />
     <ClCompile Include="MenuClass.cpp" />
     <ClCompile Include="MenuDropList.cpp" />
+    <ClCompile Include="MenuEdit.cpp" />
     <ClCompile Include="MenuLabel.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="size.cpp" />
@@ -91,6 +92,7 @@
     <ClInclude Include="MenuButton.h" />
     <ClInclude Include="MenuClass.h" />
     <ClInclude Include="MenuDropList.h" />
+    <ClInclude Include="MenuEdit.h" />
     <ClInclude Include="MenuLabel.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="size.h" />
