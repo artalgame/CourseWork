@@ -52,7 +52,7 @@ void MenuLabel::Draw()
 	}
 }
 
-void MenuLabel::Process(Position mousePos,bool isClicked,bool isPressed)
+void MenuLabel::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 {
 	if(_state != DEACTIVE)
 	{
@@ -68,22 +68,18 @@ void MenuLabel::Process(Position mousePos,bool isClicked,bool isPressed)
 				else
 					_state = UNDERCURSOR;
 			}
-		/*	else
-				if (isPressed)
-				{
-					_state = PRESSED;
-				}*/
 			else
-			if(_state != PRESSED)
+
+				if(_state != PRESSED)
 				{
 					_state = UNDERCURSOR;
 				}
 		}
 		else
-		if(_state != PRESSED)
-		{
-			_state = NORMALSTATE;
-		}
+			if(_state != PRESSED)
+			{
+				_state = NORMALSTATE;
+			}
 	}
 }
 

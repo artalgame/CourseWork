@@ -17,6 +17,7 @@ protected:
 	bool _playClickSound;
 	bool _playCursorOnSound;
 	char* _caption;//alternative text which displaied when UNDERCURSOR _buttonState
+	State _state1;
 public:
 	MenuButton(void);
 	MenuButton(Position pos, Size size,ITexture* image, IMusic* isClick, IMusic* isCursorOn, State state,char* caption);
@@ -24,7 +25,7 @@ public:
 	void SetTexture(ITexture *image);
     State GetState();
 	void SetState(State state);
-	void Process(Position mousePos,bool isClicked,bool isPressed);
+	void Process(Position mousePos,bool isClicked,bool isPressed,char* _char=NULL);
 	void Draw();//draw button
 	~MenuButton(void);
 };

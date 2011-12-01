@@ -10,10 +10,11 @@ MenuButton::MenuButton(void):DrawObject()
 	_caption = NULL;//text which will characterise our button
 	_playClickSound = false;//If Click sound played yet
 	_playCursorOnSound = false;//If Cursorsound played yet
+	_state1 = _state;
 }
 
 MenuButton::MenuButton(Position pos, Size size,ITexture* image, IMusic* isClick, IMusic* isCursorOn,
-	State state,char* caption):DrawObject(pos, size,state)
+	                   State state,char* caption):DrawObject(pos, size,state)
 {
 	_image = image;
 	_isClickSound = isClick;
@@ -21,7 +22,7 @@ MenuButton::MenuButton(Position pos, Size size,ITexture* image, IMusic* isClick,
 	_state = state;
 	_caption = caption;
 
-	uint width, height;
+     uint width, height;
 	_playClickSound = false;
 	_playCursorOnSound = false;
 	_image->GetDimensions(width, height);
@@ -31,7 +32,7 @@ MenuButton::MenuButton(Position pos, Size size,ITexture* image, IMusic* isClick,
 void MenuButton::Draw()
 {
 	if(_image != NULL)
-		_image->Draw2D(_position.GetX(),_position.GetY(),_size.GetWidth(),_size.GetHeight(),_position.GetAngle(),_state);
+	_image->Draw2D(_position.GetX(),_position.GetY(),_size.GetWidth(),_size.GetHeight(),_position.GetAngle(),_state1);
 }
 State MenuButton::GetState()
 {
@@ -43,49 +44,51 @@ ITexture* MenuButton::GetTexture()
 	return _image;
 }
 
-void MenuButton::Process(Position mousePos,bool isClicked,bool isPressed)//in code which will use this method must be realize verification of click
+void MenuButton::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)//in code which will use this method must be realize verification of click
 {
 	if(_state != DEACTIVE)
 	{
-		if((mousePos.GetX()>=_position.GetX())
-			&&(mousePos.GetX()<=_position.GetX()+_size.GetWidth())
-			&&(mousePos.GetY()>=_position.GetY())
-			&&(mousePos.GetY()<=_position.GetY()+_size.GetHeight()))
+	if((mousePos.GetX()>=_position.GetX())
+		&&(mousePos.GetX()<=_position.GetX()+_size.GetWidth())
+		&&(mousePos.GetY()>=_position.GetY())
+		&&(mousePos.GetY()<=_position.GetY()+_size.GetHeight()))
 		{
 			if(isClicked)
 			{
-				_state = UNDERCURSOR;
-
+				_state = PRESSED;
+				if(!(_playClickSound)&&(_isClickSound != NULL))
+				{
+					 _playClickSound = true;
+					_isClickSound->Play(false);
+				}
+				_state1 = UNDERCURSOR;
 			}
 			else
-				if (isPressed)
+			if (isPressed)
+			{
+				_state = UNDERCURSOR;
+				_state1 = PRESSED;
+			}
+			else
+			{
+				_state = UNDERCURSOR;
+				_state1 = UNDERCURSOR;
+				if(!(_playCursorOnSound)&&(_isCursorOnSound != NULL))
 				{
-					_state = PRESSED;
-					if(!(_playClickSound)&&(_isClickSound != NULL))
-					{
-						_playClickSound = true;
-						_isClickSound->Play(false);
-					}
+					_playCursorOnSound = true;
+					_isCursorOnSound->Play(false);
 				}
-				else
-				{
-					_state = UNDERCURSOR;
-					if(!(_playCursorOnSound)&&(_isCursorOnSound != NULL))
-					{
-						_playCursorOnSound = true;
-						_isCursorOnSound->Play(false);
-					}
-					_playClickSound = false;
-				}
+				_playClickSound = false;
+			}
 		}
-		else
-		{
-			_state = NORMALSTATE;
-			_playClickSound = false;
-			_playCursorOnSound = false;
-
-		}
-
+	else
+	{
+		_state = NORMALSTATE;
+		_state1 = NORMALSTATE;
+		_playClickSound = false;
+		_playCursorOnSound = false;
+	}
+		
 	}
 }
 
@@ -101,5 +104,5 @@ void MenuButton::SetTexture(ITexture* image)
 
 MenuButton::~MenuButton(void)
 {
-	//	delete(_caption);//check mistake
+//	delete(_caption);//check mistake
 }

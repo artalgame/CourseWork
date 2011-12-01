@@ -18,25 +18,27 @@ protected:
 	char* _caption;
 	int _countOfElement;
 	int _indexOfChLabel;
+	int _labelWidth, _labelHeight;
 	IBitmapFont* _font;//font of text
 	ITexture* _image;
 	TColor4 _colorOfText;
 public:
 	//constructors
 	//MenuDropList(void);
-	MenuDropList(Position pos, Size size,TColor4 colorOfText,MenuButton* button = NULL,int countOfElement = -1,IBitmapFont* font = NULL,ITexture* image = NULL);
+	MenuDropList(Position pos, Size size,State state,int labelWidth,int labelHeight,TColor4 colorOfText,
+		MenuButton* button ,int countOfElement,IBitmapFont* font,ITexture* image);
 
 	//virtual methods of DrawObject class
-	void Process(Position mousePos,bool isClicked,bool isPressed);
+	void Process(Position mousePos,bool isClicked,bool isPressed,char* _char=NULL);
 	void Draw();
 	State GetState();
 	void SetState(State state);
 
 	//own methods
-	MenuLabel* GetChangedElement();
-	void SetChangedElement(int index);
+	MenuLabel* GetChoisedElement();
+	void SetChoisedElement(int index);
 
-	MenuLabel* GetIndexElement(int index);
+	MenuLabel* GetElement(int index);
 	void AddNewElement(MenuLabel* newElement);
 
 	~MenuDropList(void);

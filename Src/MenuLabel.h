@@ -1,4 +1,5 @@
 #pragma once
+#include "MenuButton.h"
 #include <vector>
 #include "DGLE2.h"
 #include"DGLE2_EXT.h"
@@ -27,7 +28,7 @@ public:
 	MenuLabel(char* caption, IBitmapFont* font, TColor4 normalColor, TColor4 underCursorColor,TColor4 selectColor,
 		TColor4 deactiveColor,ITexture* fonImage,Position pos, Size size, State state);
 
-	void Process(Position mousePos,bool isClicked,bool isPressed);
+	void Process(Position mousePos,bool isClicked,bool isPressed,char* _char=NULL);
 	void Draw();
   
 	IBitmapFont* GetFont();
