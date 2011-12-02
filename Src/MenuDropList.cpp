@@ -1,8 +1,7 @@
 #include "MenuDropList.h"
 
 
-MenuDropList::MenuDropList(Position pos, Size size,State state,int labelWidth,
-	int labelHeight,TColor4 colorOfText,MenuButton* button,int countOfElement,IBitmapFont* font,ITexture* image):
+MenuDropList::MenuDropList(Position pos, Size size,State state,TColor4 colorOfText,MenuButton* button,int countOfElement,IBitmapFont* font,ITexture* image):
 DrawObject(pos, size,state)
 {
 	_colorOfText = colorOfText;
@@ -13,8 +12,8 @@ DrawObject(pos, size,state)
 	_font = font;
 	_button->SetPosition(Position(_position.GetX()+_size.GetWidth(),_position.GetY(),0));
 	_button->SetSize(Size(_size.GetHeight(),_size.GetHeight()));
-	_labelWidth = labelWidth;
-	_labelHeight = labelHeight;
+	_labelWidth = _size.GetWidth();
+	_labelHeight = _size.GetHeight();
 }
 
 void MenuDropList::AddNewElement(MenuLabel* newElement)
@@ -85,6 +84,7 @@ void MenuDropList::Process(Position mousePos,bool isClicked,bool isPressed,char*
 					&&(mousePos.GetY()>=_position.GetY())
 					&&(mousePos.GetY()<=_position.GetY()+_size.GetHeight()+_countOfElement*_labelHeight))
 				{
+					_button->Process(mousePos,isClicked,isPressed);
 					for(int i =0;i<_countOfElement;i++)
 					{
 						_labelList[i]->Process(mousePos,isClicked,isPressed);
