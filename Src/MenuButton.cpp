@@ -22,11 +22,12 @@ MenuButton::MenuButton(Position pos, Size size,ITexture* image, IMusic* isClick,
 	_state = state;
 	_caption = caption;
 
+	_state1 = _state;
      uint width, height;
 	_playClickSound = false;
 	_playCursorOnSound = false;
 	_image->GetDimensions(width, height);
-	_image->SetFrameSize(width/4, height);
+	_image->SetFrameSize(width, height/4);
 }
 
 void MenuButton::Draw()

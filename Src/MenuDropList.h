@@ -25,7 +25,7 @@ protected:
 public:
 	//constructors
 	//MenuDropList(void);
-	MenuDropList(Position pos, Size size,State state,int labelWidth,int labelHeight,TColor4 colorOfText,
+	MenuDropList(Position pos, Size size,State state,TColor4 colorOfText,
 		MenuButton* button ,int countOfElement,IBitmapFont* font,ITexture* image);
 
 	//virtual methods of DrawObject class

@@ -78,6 +78,7 @@
     <ClCompile Include="DrawObject.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainClass.cpp" />
+    <ClCompile Include="MainMenuClass.cpp" />
     <ClCompile Include="MenuButton.cpp" />
     <ClCompile Include="MenuClass.cpp" />
     <ClCompile Include="MenuDropList.cpp" />
@@ -89,6 +90,7 @@
   <ItemGroup>
     <ClInclude Include="DrawObject.h" />
     <ClInclude Include="MainClass.h" />
+    <ClInclude Include="MainMenuClass.h" />
     <ClInclude Include="MenuButton.h" />
     <ClInclude Include="MenuClass.h" />
     <ClInclude Include="MenuDropList.h" />
@@ -96,6 +98,9 @@
     <ClInclude Include="MenuLabel.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="size.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram11.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
