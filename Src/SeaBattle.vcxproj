@@ -75,6 +75,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cell.cpp" />
     <ClCompile Include="DrawObject.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainClass.cpp" />
@@ -88,6 +89,7 @@
     <ClCompile Include="size.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cell.h" />
     <ClInclude Include="DrawObject.h" />
     <ClInclude Include="MainClass.h" />
     <ClInclude Include="MainMenuClass.h" />
