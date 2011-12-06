@@ -12,10 +12,10 @@ private:
 public:
 	//Constructors
 	Cell(void);
-	Cell(ITexture* textureSea, ITexture* textureSelection);
+	Cell(ITexture* textureSea, ITexture* textureSelection, Position pos, Size size, State state);
 
 	//Overrided method 
-	void Process(Position mousePos,bool isClicked,bool isPressed);
+	void Process(Position mousePos,bool isClicked,bool isPressed,char* _char=NULL);
 	void Draw();
 
 	ITexture* Get_TextureSea(void);

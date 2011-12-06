@@ -2,6 +2,7 @@
 #include "DrawObject.h"
 #include "MenuButton.h"
 #include "MenuLabel.h"
+#include "Cell.h"
 //#include "MenuClass.h"
 #include "MenuDropList.h"
 #include "size.h"

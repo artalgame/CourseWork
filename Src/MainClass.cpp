@@ -64,7 +64,8 @@ void MainClass::LOADER()
 		TColor4(0,0,0, 255),tex,Position(430,200,0),Size(150, 30),NORMALSTATE);
 	newMenuDropList->AddNewElement(newLabel);
 	
-
+	pResourceManager->Load("..\\Data\\textures\\Game\\Water.jpg",(IEngBaseObj*&)tex);
+	mainMenu->AddElement(new Cell(tex, NULL, Position(20, 20, 0), Size(20, 20), NORMALSTATE));
 	
 	//mainMenu->AddElement(newMenuDropList);
 	mainMenu->PlayMusic(true);
