@@ -50,7 +50,7 @@ void MenuEdit::Draw(void)
 	}
 }
 
-void MenuEdit::Process(Position mousePos,bool isClicked,bool isPressed)
+void MenuEdit::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 {
 	if(_state != DEACTIVE)
 	{

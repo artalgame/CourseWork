@@ -2,7 +2,9 @@
 #include "DrawObject.h"
 #include "MenuButton.h"
 #include "MenuLabel.h"
+#include "MenuEdit.h"
 //#include "MenuClass.h"
+#include "PreSingleplayerMenu.h"
 #include "MenuDropList.h"
 #include "size.h"
 #include "MainMenuClass.h"
@@ -26,8 +28,7 @@ private:
 	IRender *pRender;
 	
 	
-	ITexture *pExitButton;
-	IMusic *pFonMusic;
+	
 	IMusic* click;
 	IMusic* cursorOn;
 	MenuButton* button;
@@ -35,6 +36,7 @@ private:
 	bool isMouseClicked;
 	bool isMousePressed;
 	MainMenuClass* mainMenu;
+	PreSingleplayerMenu* preSPMenu;
 	IEngineCore *pEngineCore;
 	IInput *pInput;
 public:

@@ -26,7 +26,7 @@ public:
 	//Draw object method
 	void Draw();
 	//State update method
-	void Process(Position mousePos,bool isClicked,bool isPressed);
+	void Process(Position mousePos,bool isClicked,bool isPressed,char* _char = "");
 
 	//Methods for an encapsulation
 	ITexture* Get_BackgroundImage(void);

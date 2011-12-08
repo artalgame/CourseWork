@@ -50,10 +50,34 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MainMenuClass" Collapsed="true">
-    <Position X="7.25" Y="3.25" Width="1.5" />
+    <Position X="8.5" Y="6.75" Width="1.5" />
+    <InheritanceLine Type="MenuClass" ManuallyRouted="true">
+      <Path>
+        <Point X="8" Y="2.441" />
+        <Point X="8" Y="2.845" />
+        <Point X="9.25" Y="2.845" />
+        <Point X="9.25" Y="6.75" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAhEAAAIAAAwAAQgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MainMenuClass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PreSingleplayerMenu" Collapsed="true">
+    <Position X="6.5" Y="6.75" Width="1.5" />
+    <InheritanceLine Type="MenuClass" ManuallyRouted="true">
+      <Path>
+        <Point X="8" Y="2.441" />
+        <Point X="8" Y="2.87" />
+        <Point X="7.135" Y="2.87" />
+        <Point X="7.135" Y="6.75" />
+        <Point X="7.25" Y="6.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>PreSingleplayerMenu.h</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="Position" Collapsed="true">
@@ -95,7 +119,7 @@
   <Enum Name="GameState">
     <Position X="12" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEACAAAAAAAEAAAAAAAAAAAIAAAAAAACAQAAAAAAA=</HashCode>
+      <HashCode>AAAACoAAAAAAAAAQAAAACAAAAIAAAAAAAAAQAABAAAA=</HashCode>
       <FileName>MainClass.h</FileName>
     </TypeIdentifier>
   </Enum>

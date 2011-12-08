@@ -90,8 +90,10 @@ void MenuDropList::Process(Position mousePos,bool isClicked,bool isPressed,char*
 						_labelList[i]->Process(mousePos,isClicked,isPressed);
 						if(_labelList[i]->GetState() == PRESSED)
 						{
+							
 							if(i != _indexOfChLabel)
 							{
+								_state = NORMALSTATE;
 								_labelList[_indexOfChLabel]->SetState(NORMALSTATE);
 								_indexOfChLabel = i;
 								break;

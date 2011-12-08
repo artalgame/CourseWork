@@ -74,6 +74,8 @@ void MenuClass::Process(Position mousePos,bool isClicked,bool isPressed,char* _c
 
 void MenuClass::AddElement(DrawObject* newObject)
 {
+	newObject->SetPosition(Position(this->GetPosition().GetX()+newObject->GetPosition().GetX(),
+		this->GetPosition().GetY()+newObject->GetPosition().GetY(),0));
 	_objectList.push_back(newObject);
 }
 

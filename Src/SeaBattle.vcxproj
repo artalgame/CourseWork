@@ -85,6 +85,7 @@
     <ClCompile Include="MenuEdit.cpp" />
     <ClCompile Include="MenuLabel.cpp" />
     <ClCompile Include="Position.cpp" />
+    <ClCompile Include="PreSingleplayerMenu.cpp" />
     <ClCompile Include="size.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +98,7 @@
     <ClInclude Include="MenuEdit.h" />
     <ClInclude Include="MenuLabel.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="PreSingleplayerMenu.h" />
     <ClInclude Include="size.h" />
   </ItemGroup>
   <ItemGroup>

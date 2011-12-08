@@ -5,6 +5,7 @@ class MainClass;
 #include"DGLE2_EXT.h"
 #include <string>
 
+
 using namespace DGLE2;
 using namespace std;
 
@@ -19,7 +20,7 @@ public:
 	void Draw();
 	void Process(Position mousePos,bool isClicked,bool isPressed,char* _char = "");
 	void SetState(State state);
-	 State GetState();
+	State GetState();
 	MainClass* GetOwner();
 	~MainMenuClass(void);
 };
