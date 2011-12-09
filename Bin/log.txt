@@ -1,50 +1,52 @@
 DGLE2 Engine Log File
 Version: Beta 2 (Tue Mar 15 18:46:31 2011)
 Visit http://dgle.deeprosoft.com/ for more information.
-Log Started at 7.12.2011.
-10:00:21.157 - Initializing Engine...
-10:00:21.164 - Engine extension plugin "DGLE2_EXT.dplug" found.
-10:00:21.180 - Plugin "DGLE2_EXT Beta 2 (Mar 17 2011)" by "DGLE2 Team" connected succesfully.
-10:00:21.180 - Plugin description: "Standart official DGLE2 extension plugin. Provides support for various file formats and engine extensions."
-10:00:21.913 - Splash window created.
+Log Started at 9.12.2011.
+11:55:00.443 - Initializing Engine...
+11:55:00.443 - Engine extension plugin "DGLE2_EXT.dplug" found.
+11:55:00.479 - Plugin "DGLE2_EXT Beta 2 (Mar 17 2011)" by "DGLE2 Team" connected succesfully.
+11:55:00.479 - Plugin description: "Standart official DGLE2 extension plugin. Provides support for various file formats and engine extensions."
+11:55:01.435 - Splash window created.
 System Information
 	Operating System: 6.1 "Microsoft Windows 7 Ultimate Edition"  (Build 7600), 32-bit
 	CPU: AMD Athlon(tm) II P320 Dual-Core Processor (~2094 Mhz X 2)
 	RAM Total: 3578 MB.
-	RAM Available: 2110 MB.
+	RAM Available: 1552 MB.
 	Video device: ATI Mobility Radeon HD 5470 512 MB. (driver "atiu9pag.dll,atiuxpag.dll,atiuxpag.dll,atiumdva.cap", ver. 8.14.0001.6099, date 29.03.2010 2:45:28)
-10:00:22.909 - Window created successfully.
-10:00:22.910 - Filesystem Subsystem initialized.
-10:00:22.910 - Initializing RenderGL Subsystem...
-10:00:23.738 - OpenGL 3.2.9712 Compatibility Profile Context on ATI Mobility Radeon HD 5470(ATI Technologies Inc.)
-10:00:23.767 - Maximum texture resolution: 16384X16384
-10:00:23.767 - Maximum anisotropy level: 16X
-10:00:23.768 - Maximum multitexturing layer: 16
-10:00:23.768 - RenderGL Subsystem initialized.
-10:00:23.790 - Resource Manager Subsystem initialized.
-10:00:23.921 - DirectSound initialized.
-10:00:23.922 - Sound Subsystem initialized.
-10:00:23.934 - DirectInput initialized.
-10:00:23.936 - Input Subsystem initialized.
-10:00:23.936 - Engine Initialized.
-10:00:23.937 - Calling user initialization procedure...
-10:00:24.390 - Done.
-10:00:24.420 - Render mode (Viewport: 800X600, WinCtrlAccess: Full) has been set properly.
-10:00:24.422 - **Entering main loop**
-10:00:45.010 - **Exiting main loop**
-10:00:45.012 - Finalizing Engine...
-10:00:45.014 - Calling user finalization procedure...
-10:00:45.015 - Done.
-10:00:45.021 - Plugin "DGLE2_EXT" disconnected succesfully.
-10:00:45.114 - OpenGL Rendering and Device contexts finalized.
-10:00:45.118 - Resource Manager Subsystem finalized.
-10:00:45.120 - Input Subsystem finalized.
-10:00:45.200 - Sound Subsystem finalized.
-10:00:45.201 - RenderGL Subsystem finalized.
-10:00:45.202 - Filesystem Subsystem finalized.
-10:00:45.203 - Window closed properly.
-10:00:45.203 - Engine Finalized.
+11:55:02.540 - Window created successfully.
+11:55:02.541 - Filesystem Subsystem initialized.
+11:55:02.542 - Initializing RenderGL Subsystem...
+11:55:03.462 - OpenGL 3.2.9712 Compatibility Profile Context on ATI Mobility Radeon HD 5470(ATI Technologies Inc.)
+11:55:03.463 - Maximum texture resolution: 16384X16384
+11:55:03.464 - Maximum anisotropy level: 16X
+11:55:03.464 - Maximum multitexturing layer: 16
+11:55:03.465 - RenderGL Subsystem initialized.
+11:55:03.487 - Resource Manager Subsystem initialized.
+11:55:03.659 - DirectSound initialized.
+11:55:03.660 - Sound Subsystem initialized.
+11:55:03.726 - DirectInput initialized.
+11:55:03.728 - Input Subsystem initialized.
+11:55:03.729 - Engine Initialized.
+11:55:03.729 - Calling user initialization procedure...
+11:55:05.118 - Done.
+11:55:05.129 - [ERROR] Can't acquire keyboard device. (File: ".\input\DirectInput.cpp", Line: 198)
+11:55:05.131 - [ERROR] Can't acquire mouse device. (File: ".\input\DirectInput.cpp", Line: 202)
+11:55:05.138 - Render mode (Viewport: 800X600, WinCtrlAccess: Full) has been set properly.
+11:55:05.150 - **Entering main loop**
+11:57:53.447 - **Exiting main loop**
+11:57:53.450 - Finalizing Engine...
+11:57:53.453 - Calling user finalization procedure...
+11:57:53.454 - Done.
+11:57:53.456 - Plugin "DGLE2_EXT" disconnected succesfully.
+11:57:53.677 - OpenGL Rendering and Device contexts finalized.
+11:57:53.679 - Resource Manager Subsystem finalized.
+11:57:53.682 - Input Subsystem finalized.
+11:57:53.751 - Sound Subsystem finalized.
+11:57:53.752 - RenderGL Subsystem finalized.
+11:57:53.753 - Filesystem Subsystem finalized.
+11:57:53.754 - Window closed properly.
+11:57:53.756 - Engine Finalized.
 ----
-Warning(s): 0 Error(s): 0
-Average FPS: 416
+Warning(s): 0 Error(s): 2
+Average FPS: 689
 Log Closed.
