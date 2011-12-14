@@ -4,6 +4,8 @@
 #include "MenuLabel.h"
 #include "MenuEdit.h"
 //#include "MenuClass.h"
+//#include "matrix.h"
+#include "PlacementMatrix.h"
 #include "PreSingleplayerMenu.h"
 #include "MenuDropList.h"
 #include "size.h"

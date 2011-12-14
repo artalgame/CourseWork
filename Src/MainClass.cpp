@@ -58,12 +58,34 @@ void MainClass::LOADER()
 	
     
         mainMenu->PlayMusic(true);
-	//Finish of loading MainMenu 
+	//Finish of loading MainMenu
 
-	//Begin of loading PreSingleplayerMenu
-
-	preSPMenu = new PreSingleplayerMenu(NULL,NULL,Position(0,0,0),Size(800,600),NORMALSTATE,this);
+    //Begin of loading PreSingleplayerMenu All objects MUST loaded in the order!!!!!!!!!!!
+    pResourceManager->Load("..\\Data\\textures\\fon2.jpg",(IEngBaseObj*&)Fon1Tex);
+	preSPMenu = new PreSingleplayerMenu(Fon1Tex,NULL,Position(0,0,0),Size(800,600),NORMALSTATE,this);
 	
+	//load BACK BUTTON
+	pResourceManager->Load("..\\Data\\textures\\buttons\\back.png",(IEngBaseObj*&)tex);
+	preSPMenu->AddElement(new MenuButton(Position(30,520,0),Size(256,64),tex,click,cursorOn,NORMALSTATE,"back"));
+	//----------------
+
+	//load START BUTTON
+	pResourceManager->Load("..\\Data\\textures\\buttons\\start.png",(IEngBaseObj*&)tex);
+	preSPMenu->AddElement(new MenuButton(Position(520,520,0),Size(256,64),tex,click,cursorOn,DEACTIVE,"back"));
+	//----------------
+
+	//Load matrix
+	ITexture* sel, *sea, *_4s,*_3s,*_2s,*_1s,*explo;
+	pResourceManager->Load("..\\Data\\textures\\selection.png",(IEngBaseObj*&)sel);
+	pResourceManager->Load("..\\Data\\textures\\sea.jpg",(IEngBaseObj*&)sea);
+	pResourceManager->Load("..\\Data\\textures\\ships\\4.png",(IEngBaseObj*&)_4s);
+	pResourceManager->Load("..\\Data\\textures\\ships\\3.png",(IEngBaseObj*&)_3s);
+		pResourceManager->Load("..\\Data\\textures\\ships\\2.png",(IEngBaseObj*&)_2s);
+			pResourceManager->Load("..\\Data\\textures\\ships\\1.png",(IEngBaseObj*&)_1s);
+	pResourceManager->Load("..\\Data\\textures\\explo.png",(IEngBaseObj*&)explo);
+	PlacementMatrix* mat = new PlacementMatrix(pInput,explo,_4s,_3s,_2s,_1s,font,true,false,sel,sea,Size(25,25),Position(400,50,0),Size(250,250),NORMALSTATE,NULL);
+	preSPMenu->AddElement(mat);
+	//-----------
 	//label Players
 	newLabel =new  MenuLabel("Players",font,TColor4(0,0,0,255),TColor4(0,0,0,255),TColor4(0,0,0,255),
 		TColor4(0,0,0, 255),NULL,Position(30,20,0),Size(150, 40),NORMALSTATE);
@@ -392,7 +414,6 @@ void MainClass::LOADER()
 void MainClass::PROCESS()
 {
 	TMouseStates mouseState;
-
 
 	pInput->GetMouseStates(mouseState);
 	if(mouseState.bLeftButton)

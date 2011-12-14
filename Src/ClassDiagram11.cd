@@ -8,9 +8,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MainClass" Collapsed="true">
-    <Position X="12" Y="0.5" Width="1.5" />
+    <Position X="16" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAwAABAgRBAAAABCAQhAAAAAAAiMAAAAAACAASBAAA=</HashCode>
+      <HashCode>AEAAAABAgRBAAAABCAQhAAAAAAAiMAAAAAACAASBAAA=</HashCode>
       <FileName>MainClass.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -50,34 +50,52 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MainMenuClass" Collapsed="true">
-    <Position X="8.5" Y="6.75" Width="1.5" />
-    <InheritanceLine Type="MenuClass" ManuallyRouted="true">
-      <Path>
-        <Point X="8" Y="2.441" />
-        <Point X="8" Y="2.845" />
-        <Point X="9.25" Y="2.845" />
-        <Point X="9.25" Y="6.75" />
-      </Path>
-    </InheritanceLine>
+    <Position X="8.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAhEAAAIAAAwAAQgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MainMenuClass.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PreSingleplayerMenu" Collapsed="true">
-    <Position X="6.5" Y="6.75" Width="1.5" />
-    <InheritanceLine Type="MenuClass" ManuallyRouted="true">
-      <Path>
-        <Point X="8" Y="2.441" />
-        <Point X="8" Y="2.87" />
-        <Point X="7.135" Y="2.87" />
-        <Point X="7.135" Y="6.75" />
-        <Point X="7.25" Y="6.75" />
-      </Path>
-    </InheritanceLine>
+    <Position X="6.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAIAAAgAAAgAAAAABAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>PreSingleplayerMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cell" Collapsed="true">
+    <Position X="3.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAJEAAAAAAAgAAAgBABEAAQAQAAAACAAAABEAAhAA=</HashCode>
+      <FileName>Cell.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="matrix" Collapsed="true">
+    <Position X="10" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAACAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>matrix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlacementMatrix" Collapsed="true">
+    <Position X="10" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABEAAAAAAAgAAAgAAQAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>PlacementMatrix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipCell" Collapsed="true">
+    <Position X="3.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAiAAgAAAgAAAEAAAAQAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>ShipCell.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ship" Collapsed="true">
+    <Position X="5.25" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABEABEAAAQAQAgAAAgIAAAABEQSAAAAAAACAAAAIDAA=</HashCode>
+      <FileName>Ship.h</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="Position" Collapsed="true">
@@ -95,22 +113,22 @@
     </TypeIdentifier>
   </Struct>
   <Typedef Name="State" Collapsed="true">
-    <Position X="2" Y="3.25" Width="1.5" />
+    <Position X="12" Y="5.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DrawObject.h</FileName>
     </TypeIdentifier>
-    <AliasOfLine Type="__unnamed_enum_0002_1" FixedFromPoint="true">
+    <AliasOfLine Type="__unnamed_enum_0002_1" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.677" Y="5" />
-        <Point X="2.677" Y="4.187" />
-        <Point X="2.75" Y="4.187" />
-        <Point X="2.75" Y="3.812" />
+        <Point X="12.927" Y="7" />
+        <Point X="12.927" Y="6.437" />
+        <Point X="12.938" Y="6.437" />
+        <Point X="12.938" Y="6.062" />
       </Path>
     </AliasOfLine>
   </Typedef>
   <Enum Name="__unnamed_enum_0002_1">
-    <Position X="2" Y="5" Width="1.25" />
+    <Position X="12.25" Y="7" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAIAAAAAAIAAAAAAAAAEAAAAAAAIAAAAAA=</HashCode>
       <FileName>DrawObject.h</FileName>

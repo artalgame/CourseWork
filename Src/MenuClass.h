@@ -3,10 +3,10 @@
 #pragma once
 #include "MenuButton.h"
 #include <vector>
-#include "DGLE2.h"
-#include"DGLE2_EXT.h"
 #include <string>
 #include "DrawObject.h"
+#include "DGLE2.h"
+#include"DGLE2_EXT.h"
 using namespace DGLE2;
 using namespace std;
 

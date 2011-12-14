@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Cell" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAJEAAAAAAAgAAAgBABEAAAAQAAAACAAAAAAAAgAA=</HashCode>
+      <FileName>Cell.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DrawObject" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABEAAACAAAgCAAgAICAAAAAIAAgAAAAAAgAoAAAA=</HashCode>
+      <FileName>DrawObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainClass" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAABAgRBAAAABCAQhAAAAAAAiMAAAAAACAASBAAA=</HashCode>
+      <FileName>MainClass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenuClass" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAhEAAAIAAAwAAQgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainMenuClass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuButton" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABMAKAgAAkgAAAgAAAAAAAiAAQAQAAAAAAAAAAIA=</HashCode>
+      <FileName>MenuButton.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuClass" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABABEAQAgABAkAAAgAAAAUAQAAAAAAAAAAAAAAMQAA=</HashCode>
+      <FileName>MenuClass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuDropList" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIABEAAAgAEAgAAAgQAAgAAAJCAQAACFAAAAAAIQAQ=</HashCode>
+      <FileName>MenuDropList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuLabel" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACABEAAEoQIAgAAAggAEACAQAiAAIAAAAAIAAAACAA=</HashCode>
+      <FileName>MenuLabel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PreSingleplayerMenu" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAIAAAgAAAgAAAAABAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>PreSingleplayerMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Position" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEACAIAAQAAAYgAAAAAAAAAAAAAAAAYAAAAAAAAAA=</HashCode>
+      <FileName>Position.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Size" Collapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAgAAAAAAAAABAABQAAAAAAAAAAEAAAAQ=</HashCode>
+      <FileName>size.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="State" Collapsed="true">
+    <Position X="11.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DrawObject.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="__unnamed_enum_0002_1" Collapsed="true">
+    <Position X="11.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAIAAAAAAIAAAAAAAAAEAAAAAAAIAAAAAA=</HashCode>
+      <FileName>DrawObject.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameState" Collapsed="true">
+    <Position X="14.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACoAAAAAAAAAQAAAACAAAAIAAAAAAAAAQAABAAAA=</HashCode>
+      <FileName>MainClass.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

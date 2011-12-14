@@ -1,93 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="DrawObject.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainClass.cpp" />
+    <ClCompile Include="MainMenuClass.cpp" />
+    <ClCompile Include="MenuButton.cpp" />
+    <ClCompile Include="MenuClass.cpp" />
+    <ClCompile Include="MenuDropList.cpp" />
+    <ClCompile Include="MenuEdit.cpp" />
+    <ClCompile Include="MenuLabel.cpp" />
+    <ClCompile Include="Position.cpp" />
+    <ClCompile Include="PreSingleplayerMenu.cpp" />
+    <ClCompile Include="size.cpp" />
+    <ClCompile Include="PlacementMatrix.cpp" />
+    <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="matrix.cpp" />
+    <ClCompile Include="ShipCell.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ShipOnCursor.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuButton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="size.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DrawObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuLabel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuDropList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MainClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Position.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuEdit.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenuClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PreSingleplayerMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="MenuButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="size.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DrawObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuLabel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuDropList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MainClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Position.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuEdit.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenuClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PreSingleplayerMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="Cell.h" />
+    <ClInclude Include="DrawObject.h" />
+    <ClInclude Include="MainClass.h" />
+    <ClInclude Include="MainMenuClass.h" />
+    <ClInclude Include="MenuButton.h" />
+    <ClInclude Include="MenuClass.h" />
+    <ClInclude Include="MenuDropList.h" />
+    <ClInclude Include="MenuEdit.h" />
+    <ClInclude Include="MenuLabel.h" />
+    <ClInclude Include="Position.h" />
+    <ClInclude Include="PreSingleplayerMenu.h" />
+    <ClInclude Include="size.h" />
+    <ClInclude Include="PlacementMatrix.h" />
+    <ClInclude Include="Ship.h" />
+    <ClInclude Include="matrix.h" />
+    <ClInclude Include="ShipCell.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="ShipOnCursor.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram11.cd" />
+    <None Include="ClassDiagram12.cd" />
   </ItemGroup>
 </Project>
