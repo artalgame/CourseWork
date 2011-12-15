@@ -19,6 +19,9 @@ protected:
 	ITexture* _textureExplo;
 	int _countOfPalubs;
 public:
+	int edgeHor ;
+	int edgeVert;
+
 	Ship(void);//in position save coordinates in matrix
 	Ship(ITexture* shipTex,ITexture* textureExplo,int countOfPalubs,Position pos,Size size, State state,bool isHorizontal = true, bool isDied = false);
 //overrided method

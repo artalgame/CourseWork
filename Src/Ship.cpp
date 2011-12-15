@@ -14,6 +14,8 @@ Ship::Ship(ITexture* shipTex,ITexture* textureExplo,int countOfPalubs,
 	_countOfPalubs = countOfPalubs;
 	_textureExplo = textureExplo;
 	_shipCells = new ShipCell*[4];
+	int edgeHor = 0;
+	int edgeVert = 0;
 	for(int i =0;i<_countOfPalubs;i++)
 	{
 		if(_isHorizontal)
@@ -31,13 +33,12 @@ void Ship::Draw()
 
 void Ship::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 {
-	
 	for(int i =0;i<_countOfPalubs;i++)
 	{
 		if(_isHorizontal)
-			_shipCells[i] ->SetPosition(Position(_position.GetX()+_size.GetWidth()/_countOfPalubs*i,_position.GetY(),0));
+			_shipCells[i] ->SetPosition(Position(_position.GetX()+(_size.GetWidth()/_countOfPalubs+edgeHor)*i,_position.GetY(),0));
 		else
-			_shipCells[i] -> SetPosition(Position(_position.GetX(),_position.GetY()+_size.GetHeight()*i,90));
+			_shipCells[i] -> SetPosition(Position(_position.GetX(),_position.GetY()+(_size.GetHeight()+edgeVert)*i,90));
 	}
 }
 

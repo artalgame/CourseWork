@@ -23,6 +23,8 @@ Cell::Cell(matrix* ownerMatrix,ITexture* textureSea, ITexture* textureSelection,
 	}
 	_ownerMatrix = ownerMatrix;
 	_isShoted = false;
+	_isNearShip = false;
+	_isShipCell = false;
 }
 
 //Overrided method 
@@ -128,6 +130,16 @@ void Cell::Set_TextureSelection(ITexture* textureSelection)
 void Cell::SetState(State state)
 {
 	_state = state;
+}
+
+void Cell::SetOwnerMatrix(matrix* ownerMatrix)
+{
+	_ownerMatrix = ownerMatrix;
+}
+
+matrix* Cell::GetOwnerMatrix()
+{
+   return _ownerMatrix;
 }
 
 //Destructor

@@ -13,6 +13,8 @@ protected:
 	matrix* _ownerMatrix;
 public:
 	bool _isShoted;
+	bool _isNearShip;
+	bool _isShipCell;
 	//Constructors
 	Cell(void);
 	Cell(matrix* ownerMatrix,ITexture* textureSea, ITexture* textureSelection, Position pos, Size size, State state);
@@ -28,6 +30,7 @@ public:
 	void Set_TextureSea(ITexture* textureSea);
 	void Set_TextureSelection(ITexture* textureSelection);	
 	void SetState(State state);
-
+	void SetOwnerMatrix(matrix* ownerMatrix);
+	matrix* GetOwnerMatrix();
 	~Cell();
 };

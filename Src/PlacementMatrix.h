@@ -11,19 +11,20 @@ class PlacementMatrix :
 	ITexture* _2PShip;
 	ITexture* _1PShip;
 	ITexture* _textureExplo;
-	int _countOf4PSh;
-	int _countOf3PSh;
-	int _countOf2PSh;
-	int _countOf1PSh;
 	bool isLeftMousePressed;
 	bool isRightMousePressed;
 	bool isLeftMouseClicked;
 	bool isRightMouseClicked;
 	TMouseStates mouseState;
-	bool _isRightFilled;
+	
 	ShipOnCursor* _cursorShip;
 	IInput* _input;
 public:
+	bool _isRightFilled;
+	int _countOf4PSh;
+	int _countOf3PSh;
+	int _countOf2PSh;
+	int _countOf1PSh;
 	PlacementMatrix(void);
 	PlacementMatrix(IInput* input,ITexture* textureExplo,ITexture* P4Ship,ITexture* P3Ship,ITexture* P2Ship,ITexture* P1Ship,IBitmapFont* font, 
 		bool isFriend,bool isCanShot,ITexture* textureSelection, ITexture* textureSea,Size cellSize,

@@ -71,7 +71,7 @@ void MainClass::LOADER()
 
 	//load START BUTTON
 	pResourceManager->Load("..\\Data\\textures\\buttons\\start.png",(IEngBaseObj*&)tex);
-	preSPMenu->AddElement(new MenuButton(Position(520,520,0),Size(256,64),tex,click,cursorOn,DEACTIVE,"back"));
+	preSPMenu->AddElement(new MenuButton(Position(520,520,0),Size(256,64),tex,click,cursorOn,DEACTIVE,"start"));
 	//----------------
 
 	//Load matrix

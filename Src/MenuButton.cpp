@@ -96,6 +96,7 @@ void MenuButton::Process(Position mousePos,bool isClicked,bool isPressed,char* _
 void MenuButton::SetState(State state)
 {
 	_state = state;
+	_state1 = state;
 }
 
 void MenuButton::SetTexture(ITexture* image)

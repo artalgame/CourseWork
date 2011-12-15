@@ -19,6 +19,7 @@ ShipCell::ShipCell(int numberOfCell,matrix* ownerMatrix,Ship* ownerShip,ITexture
 	uint x,y;
 	_textureShip->GetDimensions(x,y);
 	_textureShip->SetFrameSize(x/_ownerShip->GetCountOfPalubs(),y/2);
+	_isShipCell = true;
 }
 
 void ShipCell::Draw()

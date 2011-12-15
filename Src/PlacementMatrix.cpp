@@ -85,6 +85,11 @@ void PlacementMatrix::Draw()
 
 void PlacementMatrix::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 {
+	if((_countOf4PSh == 0)&&(_countOf3PSh == 0)&&(_countOf2PSh == 0)&&(_countOf1PSh == 0))
+		_isRightFilled = true;
+	else
+		_isRightFilled = false;
+
 	_input->GetMouseStates(mouseState);
 	isLeftMouseClicked = isClicked;
 	isLeftMousePressed = isPressed;
@@ -115,7 +120,7 @@ void PlacementMatrix::Process(Position mousePos,bool isClicked,bool isPressed,ch
 				(_position.GetY()+_size.GetHeight()+50<=mousePos.GetY())&&
 				(_position.GetX()+_cellSize.GetWidth()*4>=mousePos.GetX())&&
 				(_position.GetY()+_size.GetHeight()+50+_cellSize.GetHeight()>=mousePos.GetY())&&
-				(isClicked))
+				(isClicked)&&(_countOf4PSh>0))
 			{
 				_cursorShip = new ShipOnCursor(this,Position(mousePos.GetX(),mousePos.GetY(),0),Size(_cellSize.GetWidth()*4,_cellSize.GetHeight()),NORMALSTATE,_textureExplo,_4PShip,4);
 			}
@@ -124,7 +129,7 @@ void PlacementMatrix::Process(Position mousePos,bool isClicked,bool isPressed,ch
 				(_position.GetY()+_size.GetHeight()+150<=mousePos.GetY())&&
 				(_position.GetX()+_cellSize.GetWidth()*3>=mousePos.GetX())&&
 				(_position.GetY()+_size.GetHeight()+150+_cellSize.GetHeight()>=mousePos.GetY())&&
-				(isClicked))
+				(isClicked)&&(_countOf3PSh>0))
 			{
 				_cursorShip = new ShipOnCursor(this,Position(mousePos.GetX(),mousePos.GetY(),0),Size(_cellSize.GetWidth()*3,_cellSize.GetHeight()),NORMALSTATE,_textureExplo,_3PShip,3);
 			}
@@ -133,7 +138,7 @@ void PlacementMatrix::Process(Position mousePos,bool isClicked,bool isPressed,ch
 				(_position.GetY()+_size.GetHeight()+150<=mousePos.GetY())&&
 				(_position.GetX()+_cellSize.GetWidth()*2+192>=mousePos.GetX())&&
 				(_position.GetY()+_size.GetHeight()+150+_cellSize.GetHeight()>=mousePos.GetY())&&
-				(isClicked))
+				(isClicked)&&(_countOf2PSh>0))
 			{
 				_cursorShip = new ShipOnCursor(this,Position(mousePos.GetX(),mousePos.GetY(),0),Size(_cellSize.GetWidth()*2,_cellSize.GetHeight()),NORMALSTATE,_textureExplo,_2PShip,2);
 			}
@@ -142,7 +147,7 @@ void PlacementMatrix::Process(Position mousePos,bool isClicked,bool isPressed,ch
 				(_position.GetY()+_size.GetHeight()+50<=mousePos.GetY())&&
 				(_position.GetX()+_cellSize.GetWidth()*1+192>=mousePos.GetX())&&
 				(_position.GetY()+_size.GetHeight()+50+_cellSize.GetHeight()>=mousePos.GetY())&&
-				(isClicked))
+				(isClicked)&&(_countOf1PSh>0))
 			{
 				_cursorShip = new ShipOnCursor(this,Position(mousePos.GetX(),mousePos.GetY(),0),Size(_cellSize.GetWidth()*1,_cellSize.GetHeight()),NORMALSTATE,_textureExplo,_1PShip,1);
 			}

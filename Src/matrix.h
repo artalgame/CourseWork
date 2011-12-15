@@ -4,6 +4,7 @@ class Player;
 #include "DGLE2.h"
 #include "Ship.h"
 #include "Cell.h"
+#include <time.h>
 #include"DGLE2_EXT.h"
 using namespace DGLE2;
 using namespace std;
@@ -11,16 +12,22 @@ class matrix :
 	public DrawObject
 {
 protected:
-    Cell*** _cellMatrix;
+    
 	ITexture* _textureSea;//0 - normal cell, 1 - selected cell, 2 - shoted cell
 	ITexture* _textureSelection;
 	Size _cellSize;
+	
+public:
+	Cell*** _cellMatrix;
+	Cell* _cellUnderCursorOrPressed;
+	Position _cellPosition;//position of cell where was pressed or undercursored
 	int edgeHor ;
 	int edgeVert;
-public:
 	Player* _ownerPlayer;
 	bool _isCanShot;//used by Cell and signalized, if we can shot to this cell.Used only mouse under matrix
 	bool _isFriend;
+
+
 	matrix(void);
 	matrix(bool isFriend,bool isCanShot,ITexture* textureSelection, ITexture* textureSea,Size cellSize,Position pos, 
 		Size size, State state,Player* ownerPlayer = NULL);
@@ -29,7 +36,9 @@ public:
 	State GetState();
 	void SetState(State state);
 
-	void AddShip(Ship* ship);
+	bool AddShip(Ship* ship);
+	matrix* GenretateMatrix(ITexture* _4PShip,ITexture* _3PShip,ITexture* _2PShip,ITexture* _1PShip,ITexture* _textureExplo);
+
 	~matrix(void);
 };
 
