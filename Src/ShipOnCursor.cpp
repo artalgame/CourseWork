@@ -60,6 +60,7 @@ void ShipOnCursor::Process(Position mousePos,bool isLeftClicked,bool isLeftPress
 					SetPosition(Position(_ownerMatrix->_cellPosition.GetX(),_ownerMatrix->_cellPosition.GetY(),_position.GetAngle()));
 					if(_ownerMatrix->AddShip(this))
 					{
+						_ownerMatrix->_listOfShip->push_back(this);
 						switch (_countOfPalubs)
 						{
 						case 1:

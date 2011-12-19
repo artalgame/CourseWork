@@ -93,6 +93,7 @@
     <ClCompile Include="Ship.cpp" />
     <ClCompile Include="ShipCell.cpp" />
     <ClCompile Include="ShipOnCursor.cpp" />
+    <ClCompile Include="SinglePlayerMenu.cpp" />
     <ClCompile Include="size.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +114,7 @@
     <ClInclude Include="Ship.h" />
     <ClInclude Include="ShipCell.h" />
     <ClInclude Include="ShipOnCursor.h" />
+    <ClInclude Include="SinglePlayerMenu.h" />
     <ClInclude Include="size.h" />
   </ItemGroup>
   <ItemGroup>

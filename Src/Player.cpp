@@ -22,10 +22,12 @@ Player::Player(int numberOfTeam, matrix* matrix, string* name,vector<Ship*>* lis
 }
 void Player::Draw()
 {
+	_matrix->Draw();
 }
 
 void Player::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 {
+	_matrix->Process(mousePos,isClicked,isPressed,_char);
 }
 
 State Player::GetState()

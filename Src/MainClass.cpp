@@ -406,10 +406,10 @@ void MainClass::LOADER()
 	//________________________________________
 	preSPMenu->AddElement(newMenuDropList);
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-	//End of loading PreSingleplayerMenu
-
+//End of loading PreSingleplayerMenu
+//Load SinglePlayerMenu
+	SPMenu = new SinglePlayerMenu(NULL,NULL,NULL,NULL,Position(0,0,0),Size(800,600),NORMALSTATE);
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 void MainClass::PROCESS()
 {
@@ -443,6 +443,9 @@ void MainClass::PROCESS()
 		case PRE_SINGLEPLAYER:
 			preSPMenu->Process(mousePos,isMouseClicked,isMousePressed);
 			break;
+		case SINGLEPLAYER:
+			SPMenu->Process(mousePos,isMouseClicked,isMousePressed);
+			break;
 		case EXIT:
 			pEngineCore->QuitEngine();
 			break;
@@ -458,6 +461,9 @@ void MainClass::DRAW()
 		break;
 	case PRE_SINGLEPLAYER:
 		preSPMenu->Draw();
+		break;
+	case SINGLEPLAYER:
+		SPMenu->Draw();
 		break;
 	}
 

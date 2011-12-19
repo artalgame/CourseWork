@@ -30,7 +30,7 @@ public:
 
 	//Methods for an encapsulation
 	ITexture* Get_BackgroundImage(void);
-	string Get_Text(void);
+	string* Get_Text(void);
 	IBitmapFont* Get_Font(void);
 	IInput* Get_Input(void);
 	TColor4* Get_Color(void);

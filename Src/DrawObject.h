@@ -20,8 +20,8 @@ public:
 	Size GetSize();
 	Position GetPosition();
 
-	void SetSize(Size size);
-	void SetPosition(Position pos);	
+	virtual void SetSize(Size size);
+	virtual void SetPosition(Position pos);	
 
 	virtual void Draw() = 0;
 	virtual void Process(Position mousePos,bool isClicked,bool isPressed,char* _char=NULL) = 0;

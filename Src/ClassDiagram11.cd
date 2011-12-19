@@ -8,7 +8,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MainClass" Collapsed="true">
-    <Position X="16" Y="1.75" Width="1.5" />
+    <Position X="11.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAABAgRBAAAABCAQhAAAAAAAiMAAAAAACAASBAAA=</HashCode>
       <FileName>MainClass.h</FileName>
@@ -22,14 +22,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MenuClass" Collapsed="true">
-    <Position X="7.25" Y="1.75" Width="1.5" />
+    <Position X="8.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABABEAQAgABAkAAAgAAAAUAQAAAAAAAAAAAAAAMQAA=</HashCode>
       <FileName>MenuClass.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MenuDropList" Collapsed="true">
-    <Position X="9.5" Y="1.75" Width="1.5" />
+    <Position X="11.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIABEAAAgAEAgAAAgQAAgAAAJCAQAACFAAAAAAIQAQ=</HashCode>
       <FileName>MenuDropList.h</FileName>
@@ -50,92 +50,106 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MainMenuClass" Collapsed="true">
-    <Position X="8.25" Y="3.75" Width="1.5" />
+    <Position X="9.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAhEAAAIAAAwAAQgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MainMenuClass.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PreSingleplayerMenu" Collapsed="true">
-    <Position X="6.25" Y="3.75" Width="1.5" />
+    <Position X="7.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAIAAAgAAAgAAAAABAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>PreSingleplayerMenu.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Cell" Collapsed="true">
-    <Position X="3.25" Y="5.25" Width="1.5" />
+    <Position X="4" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAJEAAAAAAAgAAAgBABEAAQAQAAAACAAAABEAAhAA=</HashCode>
+      <HashCode>AAAAJEAAAIAAAgAAAgBABEAAAAQAIAACAgAAQAAQhAA=</HashCode>
       <FileName>Cell.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="matrix" Collapsed="true">
-    <Position X="10" Y="6" Width="1.5" />
+    <Position X="13.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAACAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>CIAAFEAACAgAAgAAAgIQECAAAAQAAAACQAAAAAAAIAA=</HashCode>
       <FileName>matrix.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlacementMatrix" Collapsed="true">
-    <Position X="10" Y="7.25" Width="1.5" />
+    <Position X="13.25" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABEAAAAAAAgAAAgAAQAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AAAADEAAAAIAAgEAAoIAQAQBQACCAQAAABCggAACAAA=</HashCode>
       <FileName>PlacementMatrix.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ShipCell" Collapsed="true">
-    <Position X="3.25" Y="7" Width="1.5" />
+    <Position X="4" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAiAAgAAAgAAAEAAAAQAAAAAAACAAAAAAAA=</HashCode>
       <FileName>ShipCell.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Ship" Collapsed="true">
-    <Position X="5.25" Y="7.5" Width="1.75" />
+    <Position X="6" Y="5.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>ABEABEAAAQAQAgAAAgIAAAABEQSAAAAAAACAAAAIDAA=</HashCode>
+      <HashCode>QBEAFEAAAQAQAgAAAgIAAAABEQSAAAAAQACAAAAICAA=</HashCode>
       <FileName>Ship.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ShipOnCursor" Collapsed="true">
+    <Position X="6.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAgQAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>ShipOnCursor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="1.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgJEAAEBAAAgAAEgIAAAAAIgAAAAAAAAAAAQAAABA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="Position" Collapsed="true">
-    <Position X="12" Y="1.75" Width="1.5" />
+    <Position X="10.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAEACAIAAQAAAYgAAAAAAAAAAAAAAAAYAAAAAAAAAA=</HashCode>
       <FileName>Position.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="Size" Collapsed="true">
-    <Position X="13.75" Y="1.75" Width="1.5" />
+    <Position X="10.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAgAAAAAAAAABAABQAAAAAAAAAAEAAAAQ=</HashCode>
       <FileName>size.h</FileName>
     </TypeIdentifier>
   </Struct>
   <Typedef Name="State" Collapsed="true">
-    <Position X="12" Y="5.5" Width="1.75" />
+    <Position X="15.25" Y="7.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DrawObject.h</FileName>
     </TypeIdentifier>
     <AliasOfLine Type="__unnamed_enum_0002_1" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="12.927" Y="7" />
-        <Point X="12.927" Y="6.437" />
-        <Point X="12.938" Y="6.437" />
-        <Point X="12.938" Y="6.062" />
+        <Point X="16.177" Y="9.25" />
+        <Point X="16.177" Y="8.687" />
+        <Point X="16.188" Y="8.687" />
+        <Point X="16.188" Y="8.312" />
       </Path>
     </AliasOfLine>
   </Typedef>
   <Enum Name="__unnamed_enum_0002_1">
-    <Position X="12.25" Y="7" Width="1.25" />
+    <Position X="15.5" Y="9.25" Width="1.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAIAAAAAAIAAAAAAAAAEAAAAAAAIAAAAAA=</HashCode>
       <FileName>DrawObject.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="GameState">
-    <Position X="12" Y="3" Width="1.5" />
+    <Position X="8.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACoAAAAAAAAAQAAAACAAAAIAAAAAAAAAQAABAAAA=</HashCode>
       <FileName>MainClass.h</FileName>

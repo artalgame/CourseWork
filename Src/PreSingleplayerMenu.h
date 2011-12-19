@@ -2,6 +2,7 @@
 class MainClass;
 #pragma once
 #include "menuclass.h"
+#include "Player.h"
 class PreSingleplayerMenu :
 	public MenuClass
 {

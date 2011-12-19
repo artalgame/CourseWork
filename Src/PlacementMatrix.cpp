@@ -9,6 +9,7 @@ PlacementMatrix::PlacementMatrix(IInput* input,ITexture* textureExplo,ITexture* 
 	Position pos,Size size, State state,Player* ownerPlayer):matrix
 	(isFriend,isCanShot,textureSelection,textureSea,cellSize,pos,size, state,ownerPlayer = NULL)
 {
+	_listOfShip = new vector<Ship*>(0);
 	_input = input;
 	_textureExplo = textureExplo;
 	_font = font;

@@ -13,11 +13,11 @@ class matrix :
 {
 protected:
     
+	
+public:
 	ITexture* _textureSea;//0 - normal cell, 1 - selected cell, 2 - shoted cell
 	ITexture* _textureSelection;
 	Size _cellSize;
-	
-public:
 	Cell*** _cellMatrix;
 	Cell* _cellUnderCursorOrPressed;
 	Position _cellPosition;//position of cell where was pressed or undercursored
@@ -37,8 +37,8 @@ public:
 	void SetState(State state);
 
 	bool AddShip(Ship* ship);
-	matrix* GenretateMatrix(ITexture* _4PShip,ITexture* _3PShip,ITexture* _2PShip,ITexture* _1PShip,ITexture* _textureExplo);
-
+	matrix* GenretateMatrix(ITexture* _4PShip,ITexture* _3PShip,ITexture* _2PShip,ITexture* _1PShip,ITexture* _textureExplo,vector<Ship*>** ships);
+	void SetPosition(Position pos);
 	~matrix(void);
 };
 

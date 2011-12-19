@@ -8,6 +8,8 @@ matrix::matrix(void)
 matrix::matrix(bool isFriend,bool isCanShot,ITexture* textureSelection, ITexture* textureSea,Size cellSize,Position pos, 
 	Size size, State state,Player* ownerPlayer):DrawObject(pos, size, state)
 {
+	edgeHor = 5;
+	edgeVert = 5;
 	_isFriend = isFriend;
 	if(_isFriend)
 		_isCanShot = false;
@@ -21,21 +23,21 @@ matrix::matrix(bool isFriend,bool isCanShot,ITexture* textureSelection, ITexture
 	for(int i=0; i<10; i++)
 		_cellMatrix[i] = new Cell*[10];
 
-	edgeHor = 5;
-	edgeVert = 5;
+	int edgeH = edgeHor;
+	int edgeV = edgeVert;
 	for(int i=0; i<10; i++)
 		for(int j = 0; j<10; j++)
 		{
 			if(i == 0 )
-				edgeVert = 0;
+				edgeV = 0;
 			else 
-				edgeVert = 5;
+				edgeV = edgeVert;
 			if(j == 0 )
-				edgeHor = 0;
+				edgeH = edgeHor;
 			else 
-				edgeHor = 5;
+				edgeH = 5;
 			_cellMatrix[i][j] = new Cell(this,_textureSea,_textureSelection,Position(pos.GetX()+
-				(_cellSize.GetWidth()+edgeHor)*j,pos.GetY()+(_cellSize.GetHeight()+edgeVert)*i,0),_cellSize,NORMALSTATE);
+				(_cellSize.GetWidth()+edgeH)*j,pos.GetY()+(_cellSize.GetHeight()+edgeV)*i,0),_cellSize,NORMALSTATE);
 		}
 }
 void matrix::Draw()
@@ -164,7 +166,7 @@ bool matrix::AddShip(Ship* ship)
 	return true;
 }
 
-matrix* matrix::GenretateMatrix(ITexture* _4PShip,ITexture* _3PShip,ITexture* _2PShip,ITexture* _1PShip,ITexture* _textureExplo)
+matrix* matrix::GenretateMatrix(ITexture* _4PShip,ITexture* _3PShip,ITexture* _2PShip,ITexture* _1PShip,ITexture* _textureExplo,vector<Ship*>** ships)
 {
 	int cOfShip = 10;
 	int currentShip = 4;
@@ -175,6 +177,7 @@ matrix* matrix::GenretateMatrix(ITexture* _4PShip,ITexture* _3PShip,ITexture* _2
 	int i;
 	int j;
 	bool isHor;
+	*ships = new vector<Ship*>(0);
 	matrix* mat = new matrix(true,false,_textureSelection,_textureSea,_cellSize,Position(0,0,0),
 		Size(_cellSize.GetWidth()*10+edgeHor*9,_cellSize.GetHeight()*10+edgeVert*9),NORMALSTATE,NULL);
 
@@ -190,23 +193,24 @@ matrix* matrix::GenretateMatrix(ITexture* _4PShip,ITexture* _3PShip,ITexture* _2
 			{
 			case 1:
 				isHor = rand() % 2;
-				ship = new Ship(_1PShip,_textureExplo,1,Position(i,j,90*isHor),Size(_cellSize.GetWidth(),_cellSize.GetHeight()),NORMALSTATE,isHor);
+				ship = new Ship(_1PShip,_textureExplo,1,Position(i,j,90*(!isHor)),Size(_cellSize.GetWidth(),_cellSize.GetHeight()),NORMALSTATE,isHor);
 				break;
 			case 2:
 				isHor = rand() % 2;
-				ship = new Ship(_2PShip,_textureExplo,2,Position(i,j,90*isHor),Size(_cellSize.GetWidth()*2,_cellSize.GetHeight()),NORMALSTATE,isHor);
+				ship = new Ship(_2PShip,_textureExplo,2,Position(i,j,90*(!isHor)),Size(_cellSize.GetWidth()*2,_cellSize.GetHeight()),NORMALSTATE,isHor);
 				break;
 			case 3:
 				isHor = rand() % 2;
-				ship = new Ship(_3PShip,_textureExplo,3,Position(i,j,90*isHor),Size(_cellSize.GetWidth()*3,_cellSize.GetHeight()),NORMALSTATE,isHor);
+				ship = new Ship(_3PShip,_textureExplo,3,Position(i,j,90*(!isHor)),Size(_cellSize.GetWidth()*3,_cellSize.GetHeight()),NORMALSTATE,isHor);
 				break;
 			case 4:
 				isHor = rand() % 2;
-				ship = new Ship(_4PShip,_textureExplo,4,Position(i,j,90*isHor),Size(_cellSize.GetWidth()*4,_cellSize.GetHeight()),NORMALSTATE,isHor);
+				ship = new Ship(_4PShip,_textureExplo,4,Position(i,j,90*(!isHor)),Size(_cellSize.GetWidth()*4,_cellSize.GetHeight()),NORMALSTATE,isHor);
 				break;
 			}
 			if(mat->AddShip(ship))
 			{
+				(*ships)->push_back(ship);
 				cOfShip--;
 				switch(currentShip)
 				{
@@ -220,13 +224,36 @@ matrix* matrix::GenretateMatrix(ITexture* _4PShip,ITexture* _3PShip,ITexture* _2
 					cOf3==1?currentShip = 2:cOf3--;
 					break;
 				case 4:
-					cOf4==1?currentShip = 3:cOf2--;
+					cOf4==1?currentShip = 3:cOf4--;
 					break;
 				}
 			}
 		}
 	}
 	return mat;
+}
+
+void matrix::SetPosition(Position pos)
+{
+	_position = pos;
+	int edgeH = edgeHor;
+	int edgeV = edgeVert;
+	for(int i=0; i<10; i++)
+		for(int j = 0; j<10; j++)
+		{
+			if(i == 0 )
+				edgeV = 0;
+			else 
+				edgeV = edgeVert;
+			if(j == 0 )
+				edgeH = 0;
+			else 
+				edgeH = edgeHor;
+			_cellMatrix[i][j]->SetSize(_cellSize);
+			_cellMatrix[i][j]->SetPosition(Position(pos.GetX()+
+				(_cellSize.GetWidth()+edgeH)*j,pos.GetY()+(_cellSize.GetHeight()+edgeV)*i,_cellMatrix[i][j]->GetPosition().GetAngle()));
+		}
+
 }
 
 matrix::~matrix(void)

@@ -13,12 +13,12 @@ protected:
 	int _numberOfTeam;
 	matrix* _matrix;
 	string* _name;
-	vector<Ship*>* _listOfShip;
 	int _difficultyStage;
 	int _countOfSlip;
 	int _countOfKills;
 	int _countOfHit;
 public:
+	vector<Ship*>* _listOfShip;
 	bool _isCanShot;//use for Cell and signalize, if we can shot to this cell.Used only mouse under matrix
 	bool _isFriend;
 

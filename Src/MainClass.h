@@ -9,6 +9,7 @@
 #include "PreSingleplayerMenu.h"
 #include "MenuDropList.h"
 #include "size.h"
+#include "SinglePlayerMenu.h"
 #include "MainMenuClass.h"
 #include "Position.h"
 #include <vector>
@@ -42,7 +43,7 @@ private:
 	IEngineCore *pEngineCore;
 	IInput *pInput;
 public:
-
+	SinglePlayerMenu* SPMenu;
 	GameState _gameState;
 	MainClass(void);
 	MainClass(IEngineCore* EngineCore,IResourceManager* ResourceManager, IRender2D* Render2D, 

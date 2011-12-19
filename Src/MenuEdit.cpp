@@ -127,9 +127,9 @@ ITexture* MenuEdit::Get_BackgroundImage(void)
 	return _backgroundImage;
 }
 
-string MenuEdit::Get_Text(void)
+string* MenuEdit::Get_Text(void)
 {
-	return _text;
+	return &_text;
 }
 
 IBitmapFont* MenuEdit::Get_Font(void)

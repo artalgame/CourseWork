@@ -6,11 +6,8 @@ class PlacementMatrix :
 	public matrix
 {
 	IBitmapFont* _font;
-	ITexture* _4PShip;
-	ITexture* _3PShip;
-	ITexture* _2PShip;
-	ITexture* _1PShip;
-	ITexture* _textureExplo;
+	
+	
 	bool isLeftMousePressed;
 	bool isRightMousePressed;
 	bool isLeftMouseClicked;
@@ -20,6 +17,12 @@ class PlacementMatrix :
 	ShipOnCursor* _cursorShip;
 	IInput* _input;
 public:
+	ITexture* _textureExplo;
+	ITexture* _4PShip;
+	ITexture* _3PShip;
+	ITexture* _2PShip;
+	ITexture* _1PShip;
+	vector<Ship*>* _listOfShip;
 	bool _isRightFilled;
 	int _countOf4PSh;
 	int _countOf3PSh;
