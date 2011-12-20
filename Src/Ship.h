@@ -21,7 +21,7 @@ protected:
 public:
 	int edgeHor ;
 	int edgeVert;
-
+	bool _isWasAttacked;
 	Ship(void);//in position save coordinates in matrix
 	Ship(ITexture* shipTex,ITexture* textureExplo,int countOfPalubs,Position pos,Size size, State state,bool isHorizontal = true, bool isDied = false);
 //overrided method
@@ -36,6 +36,7 @@ public:
 	void SetIsDied(bool isDied);
     bool GetIsHorizontal();
 	void SetIsHorizontal(bool isHorizontal);
+	void SetPosition(Position pos);
 	ShipCell* GetCell(int index);
 	~Ship(void);
 };

@@ -8,6 +8,7 @@ Ship::Ship(void)
 Ship::Ship(ITexture* shipTex,ITexture* textureExplo,int countOfPalubs, 
 	Position pos,Size size, State state,bool isHorizontal, bool isDied):DrawObject(pos,size,state)
 {
+	_isWasAttacked = false;
 	_isHorizontal = isHorizontal;
 	_isDied = isDied;
 	_shipTex = shipTex;
@@ -33,6 +34,28 @@ void Ship::Draw()
 
 void Ship::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 {
+	/*for(int i =0;i<_countOfPalubs;i++)
+	{
+		if(_isHorizontal)
+			_shipCells[i] ->SetPosition(Position(_position.GetX()+(_size.GetWidth()/_countOfPalubs+edgeHor)*i,_position.GetY(),0));
+		else
+			_shipCells[i] -> SetPosition(Position(_position.GetX(),_position.GetY()+(_size.GetHeight()+edgeVert)*i,90));
+	}*/
+	int count = 0;
+	for(int i=0; i<GetCountOfPalubs();i++)
+		if(_shipCells[i]->_isExplo)
+		{
+			count++;
+		}
+	if(count == GetCountOfPalubs())
+	{
+		_isDied = true;
+	}
+}
+
+void Ship::SetPosition(Position pos)
+{
+	DrawObject::SetPosition(pos);
 	for(int i =0;i<_countOfPalubs;i++)
 	{
 		if(_isHorizontal)
@@ -70,6 +93,7 @@ bool Ship::GetIsHorizontal()
 void Ship::SetIsHorizontal(bool isHorizontal)
 {
 	_isHorizontal = isHorizontal;
+	SetPosition(_position);
 }
 
 int Ship::GetCountOfPalubs()

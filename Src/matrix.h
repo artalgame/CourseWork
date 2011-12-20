@@ -15,6 +15,7 @@ protected:
     
 	
 public:
+	bool _isWasAttacked;
 	ITexture* _textureSea;//0 - normal cell, 1 - selected cell, 2 - shoted cell
 	ITexture* _textureSelection;
 	Size _cellSize;

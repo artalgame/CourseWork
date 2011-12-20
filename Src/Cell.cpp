@@ -27,7 +27,19 @@ Cell::Cell(matrix* ownerMatrix,ITexture* textureSea, ITexture* textureSelection,
 	_isShipCell = false;
 }
 
-//Overrided method 
+//Overrided method
+bool Cell::GetShot()
+{
+	if(!_isShoted)
+	{
+	_isShoted = true;
+	_ownerMatrix->_isWasAttacked = true;
+	//
+	return true;
+	}
+	else
+		return false;
+}
 void Cell::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 {
 	if((_state != DEACTIVE)&&(_textureSea != NULL))
@@ -37,14 +49,14 @@ void Cell::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 			&& (mousePos.GetY()>=_position.GetY())
 			&& (mousePos.GetY()<=_position.GetY()+_size.GetHeight()))
 		{
-			if((isClicked || isPressed))
+			if(isClicked)//((isClicked || isPressed))
 			{
 				_state = PRESSED;
 				if(_ownerMatrix->_isCanShot)
 					if(_isShoted == false)
 					{
 						_isShoted = true;
-						_ownerMatrix->_isCanShot = false;
+						//_ownerMatrix->_isCanShot = false;
 					}
 			}
 			else 
@@ -82,20 +94,20 @@ void Cell::Draw()
 				{
 
 					if (_textureSea != NULL)
-						_textureSea->Draw2D(_position.GetX(), _position.GetY(), _size.GetWidth(), _size.GetHeight(), _position.GetAngle(), 1);
+						_textureSea->Draw2D(_position.GetX(), _position.GetY(), _size.GetWidth(), _size.GetHeight(), 0, 1);
 					if(_textureSelection != NULL)
 						if((_ownerMatrix->_isCanShot))
-							_textureSelection->Draw2D(_position.GetX(), _position.GetY(), _size.GetWidth(), _size.GetHeight(), _position.GetAngle(),0);
+							_textureSelection->Draw2D(_position.GetX(), _position.GetY(), _size.GetWidth(), _size.GetHeight(), 0,0);
 						else
-							_textureSelection->Draw2D(_position.GetX(), _position.GetY(), _size.GetWidth(), _size.GetHeight(), _position.GetAngle(),2);
+							_textureSelection->Draw2D(_position.GetX(), _position.GetY(), _size.GetWidth(), _size.GetHeight(), 0,2);
 				}
 				else
-					_textureSea->Draw2D(_position.GetX(), _position.GetY(), _size.GetWidth(), _size.GetHeight(), _position.GetAngle(), 0);
+					_textureSea->Draw2D(_position.GetX(), _position.GetY(), _size.GetWidth(), _size.GetHeight(), 0, 0);
 
 		}
 		else
 		{
-			_textureSea->Draw2D(_position.GetX(), _position.GetY(), _size.GetWidth(), _size.GetHeight(), _position.GetAngle(), 2);
+			_textureSea->Draw2D(_position.GetX(), _position.GetY(), _size.GetWidth(), _size.GetHeight(), 0, 2);
 		}
 	}
 }

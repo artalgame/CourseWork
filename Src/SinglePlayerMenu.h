@@ -8,8 +8,8 @@ class SinglePlayerMenu :
 private:
 	Player* _currentPlayer;
 	vector<Player*>* _players;
-
 public:
+	bool _isPlayerShootedYet;
 	SinglePlayerMenu(void);
 	SinglePlayerMenu(vector<Player*>* players, Player* player, ITexture* fonImage, IMusic* fonMusic,Position pos, Size size,State state);
 

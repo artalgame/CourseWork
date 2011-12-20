@@ -26,7 +26,7 @@ public:
 	ITexture* Get_TextureSea(void);
 	ITexture* Get_TextureSelection(void);
 	State GetState();
-
+	virtual bool GetShot();
 	void Set_TextureSea(ITexture* textureSea);
 	void Set_TextureSelection(ITexture* textureSelection);	
 	void SetState(State state);

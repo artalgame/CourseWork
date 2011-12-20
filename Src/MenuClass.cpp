@@ -66,11 +66,6 @@ void MenuClass::Process(Position mousePos,bool isClicked,bool isPressed,char* _c
 			for(int i = 0; i<_objectList.size(); i++)
 			{
 				_objectList[i]->Process(mousePos, isClicked, isPressed);
-				if((_objectList[i]->GetState()!=DEACTIVE)&&(_objectList[i]->GetState() != NORMALSTATE))
-				{
-					_state = _objectList[i]->GetState();
-					return;
-				}
 			}
 	}
 	else

@@ -8,6 +8,7 @@ matrix::matrix(void)
 matrix::matrix(bool isFriend,bool isCanShot,ITexture* textureSelection, ITexture* textureSea,Size cellSize,Position pos, 
 	Size size, State state,Player* ownerPlayer):DrawObject(pos, size, state)
 {
+	_isWasAttacked = false;
 	edgeHor = 5;
 	edgeVert = 5;
 	_isFriend = isFriend;
@@ -53,13 +54,17 @@ void matrix::Process(Position mousePos,bool isClicked,bool isPressed,char* _char
 	_cellUnderCursorOrPressed = NULL;
 	for(int i=0; i<10; i++)
 		for(int j = 0; j<10; j++)
-		{			
+		{	
+			bool stateCell = _cellMatrix[i][j]->_isShoted;
 			_cellMatrix[i][j]->Process(mousePos,isClicked,isPressed);
 			if(_cellMatrix[i][j]->GetState() != NORMALSTATE)
 			{
 				_cellUnderCursorOrPressed = _cellMatrix[i][j];
 				_cellPosition = Position(i,j,0);
+
 				st = _cellMatrix[i][j]->GetState();
+				if(_cellMatrix[i][j]->_isShoted != stateCell)
+					_isWasAttacked = true;
 			}
 		}
 		_state = st;

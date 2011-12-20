@@ -66,7 +66,7 @@ void MainClass::LOADER()
 	
 	//load BACK BUTTON
 	pResourceManager->Load("..\\Data\\textures\\buttons\\back.png",(IEngBaseObj*&)tex);
-	preSPMenu->AddElement(new MenuButton(Position(30,520,0),Size(256,64),tex,click,cursorOn,NORMALSTATE,"back"));
+	preSPMenu->AddElement(new MenuButton(Position(10,5,0),Size(128,32),tex,click,cursorOn,NORMALSTATE,"back"));
 	//----------------
 
 	//load START BUTTON
@@ -409,6 +409,12 @@ void MainClass::LOADER()
 //End of loading PreSingleplayerMenu
 //Load SinglePlayerMenu
 	SPMenu = new SinglePlayerMenu(NULL,NULL,NULL,NULL,Position(0,0,0),Size(800,600),NORMALSTATE);
+	//load BACK BUTTON
+	pResourceManager->Load("..\\Data\\textures\\buttons\\start.png",(IEngBaseObj*&)tex);
+	SPMenu->AddElement(new MenuButton(Position(700,530,0),Size(64,32),tex,click,cursorOn,NORMALSTATE,"back"));
+	//----------------
+
+	
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 void MainClass::PROCESS()
