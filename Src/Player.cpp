@@ -88,7 +88,7 @@ void Player::MakeShot(vector<Player*>* players)
 	Player* foe;
 	for(int i=0;i<players->size();i++)
 	{
-		if(((*players)[i]->_isFriend !=_isFriend)&&(!(*players)[i]->_isDied))
+		if(((*players)[i]->_numberOfTeam !=_numberOfTeam)&&(!(*players)[i]->_isDied))
 		{
 			(*foePlayers).push_back((*players)[i]);
 		}
@@ -127,6 +127,7 @@ Player* Player::MakeShotByStage2(vector<Player*>* foePlayers)
 }
 Player* Player::MakeShotByStage1(vector<Player*>* foePlayers)
 {
+	
 	int i = rand()%foePlayers->size();
 	int x,y;
 	while(true)

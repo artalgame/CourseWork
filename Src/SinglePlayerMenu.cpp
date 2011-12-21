@@ -37,12 +37,13 @@ void SinglePlayerMenu::Process(Position mousePos,bool isClicked,bool isPressed,c
 {
 	MenuClass::Process(mousePos, isClicked, isPressed, _char);
 	_currentPlayer->Process(mousePos,isClicked,isPressed,_char);
+	
 	if(!_isPlayerShootedYet)
 	{
 		for (int i = 0; i < _players->size(); i++)
-			{
-				_players->operator[](i)->ResetAttacked();
-			}
+		{
+			_players->operator[](i)->ResetAttacked();
+		}
 		for (int i = 0; i < _players->size(); i++)
 		{
 			_players->operator[](i)->Process(mousePos,isClicked,isPressed,_char);
@@ -60,14 +61,15 @@ void SinglePlayerMenu::Process(Position mousePos,bool isClicked,bool isPressed,c
 			_players->push_back(_currentPlayer);
 			for (int i = 0; i < _players->size()-1; i++)
 			{
-				_players->operator[](i)->MakeShot(_players);
+				if(!(*_players)[i]->_isDied)
+					_players->operator[](i)->MakeShot(_players);
 			}
-			
+
 			_players->pop_back();
 			for (int i = 0; i < _players->size(); i++)
-		{
-			_players->operator[](i)->Process(mousePos,false,false,_char);
-		}
+			{
+				_players->operator[](i)->Process(mousePos,false,false,_char);
+			}
 			return;
 		}
 		for (int i = 0; i < _players->size(); i++)

@@ -1,3 +1,4 @@
+#include <time.h>
 #include "Player.h"
 #include "matrix.h"
 

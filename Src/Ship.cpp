@@ -1,3 +1,5 @@
+#include <time.h>
+#include "matrix.h"
 #include "Ship.h"
 
 
@@ -50,6 +52,68 @@ void Ship::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 	if(count == GetCountOfPalubs())
 	{
 		_isDied = true;
+		DrawContur();
+	}
+}
+void Ship::DrawContur()
+{
+	for(int k =0;k<GetCountOfPalubs();k++)
+	{
+		matrix* Matrix = GetCell(0)->GetOwnerMatrix();
+		Cell*** _cellMatrix = Matrix->_cellMatrix;
+		if(!GetIsHorizontal())
+		{
+			
+			int i =GetPosition().GetX()+k;
+			int j =GetPosition().GetY();
+			if((k == 0)&&(i-1>=0))
+			{
+				_cellMatrix[i-1][j]->_isShoted = true;
+				if(j-1>=0)
+					_cellMatrix[i-1][j-1]->_isShoted = true;
+				if(j+1<10)
+					_cellMatrix[i-1][j+1]->_isShoted = true;
+			}
+			if((k == GetCountOfPalubs()-1)&&(i+1<10))
+			{
+				_cellMatrix[i+1][j]->_isShoted = true;
+				if(j-1>=0)
+					_cellMatrix[i+1][j-1]->_isShoted = true;
+				if(j+1<10)
+					_cellMatrix[i+1][j+1]->_isShoted = true;
+			}
+			if((j-1>=0))
+				_cellMatrix[i][j-1]->_isShoted = true;
+			if((j+1<10))
+				_cellMatrix[i][j+1]->_isShoted = true;
+		}
+		else
+		{
+			int i =GetPosition().GetX();
+			int j =GetPosition().GetY()+k;
+
+			
+			if((k == 0)&&(j-1>=0))
+			{
+				_cellMatrix[i][j-1]->_isShoted = true;
+				if(i-1>=0)
+					_cellMatrix[i-1][j-1]->_isShoted = true;
+				if(i+1<10)
+					_cellMatrix[i+1][j-1]->_isShoted = true;
+			}
+			if((k == GetCountOfPalubs()-1)&&(j+1<10))
+			{
+				_cellMatrix[i][j+1]->_isShoted = true;
+				if(i-1>=0)
+					_cellMatrix[i-1][j+1]->_isShoted = true;
+				if(i+1<10)
+					_cellMatrix[i+1][j+1]->_isNearShip = true;
+			}
+			if((i-1>=0))
+				_cellMatrix[i-1][j]->_isShoted = true;
+			if((i+1<10))
+				_cellMatrix[i+1][j]->_isShoted = true;
+		}
 	}
 }
 

@@ -12,12 +12,14 @@ class Ship :
 	public DrawObject
 {
 protected:
+	
 	bool _isHorizontal;
 	ShipCell** _shipCells;
 	bool _isDied;
 	ITexture* _shipTex;
 	ITexture* _textureExplo;
 	int _countOfPalubs;
+	void DrawContur();
 public:
 	int edgeHor ;
 	int edgeVert;

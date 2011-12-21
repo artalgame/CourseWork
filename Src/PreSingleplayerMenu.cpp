@@ -17,6 +17,8 @@ void PreSingleplayerMenu::Draw()
 
 void PreSingleplayerMenu::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 {
+	vector<Ship*>* ships = new vector<Ship*>(0);
+
 	MenuClass::Process(mousePos,isClicked,isPressed, _char);
 	//check - if we can to allow to press button START
 	bool isAllRight = true;
@@ -76,10 +78,45 @@ void PreSingleplayerMenu::Process(Position mousePos,bool isClicked,bool isPresse
 	if(_objectList[0]->GetState() == PRESSED)
 	{
 		_owner->_gameState = MAIN_MENU;
+
 	}
+	if(_objectList[17]->GetState() == PRESSED)
+	{
+		//[1]->SetState(NORMALSTATE);
+		
+		PlacementMatrix* mat = (PlacementMatrix*)_objectList[2];
+
+		matrix* player_mat = mat->GenretateMatrix(mat->_4PShip,mat->_3PShip,mat->_2PShip,mat->_1PShip,mat->_textureExplo,&ships);
+		mat->_listOfShip = ships;
+		player_mat->_cellSize = mat->_cellSize;
+		player_mat->SetPosition(mat->GetPosition());//make lines beetwen cells
+		for(int i=0;i<10;i++)
+			for(int j=0;j<10;j++)
+				mat->_cellMatrix[i][j]=player_mat->_cellMatrix[i][j];
+		mat->_countOf1PSh = 0;
+		mat->_countOf2PSh = 0;
+		mat->_countOf3PSh = 0;
+		mat->_countOf4PSh = 0;
+		mat->_isRightFilled = true;
+	}
+
 	if(_objectList[1]->GetState() == PRESSED)
 	{
+			time_t rawtime; 
+            time ( &rawtime );
+	        srand((int)rawtime);
+
+		MenuDropList* s1;
+		MenuDropList* s2;
+		Position matrixPos;
+		vector<Player*>* players = new vector<Player*>(0);
+
+		bool isFriendly;
+		bool isCanShot = true;
+		int stage;
+
 		PlacementMatrix* mat = (PlacementMatrix*)_objectList[2];//our Placement matrix
+		
 		common+=1;//count of players
 		//mat->edgeHor = 7 - common;
 		//mat->edgeVert = 7- common;
@@ -91,26 +128,27 @@ void PreSingleplayerMenu::Process(Position mousePos,bool isClicked,bool isPresse
 		mat->SetPosition(Position(10,10,0));//position of our player
 		MenuDropList* team = (MenuDropList*)_objectList[16];//team of player
 		matrix* player_mat = new matrix(*mat);//player matrix
+
+		//matrix* player_mat = mat->GenretateMatrix(mat->_4PShip,mat->_3PShip,mat->_2PShip,mat->_1PShip,mat->_textureExplo,&ships);
+		player_mat->_cellSize = cellSize;
 		player_mat->SetPosition(mat->GetPosition());//make lines beetwen cells
+		player_mat->_isFriend = true;
+		player_mat->_isCanShot = false;
+
 		Player* you = new Player(atoi(team->GetChoisedElement()->GetCaption()),player_mat,((MenuEdit*)_objectList[4])->Get_Text(),mat->_listOfShip,mat->GetPosition(),
 			mat->GetSize(),mat->GetState(),0,0,0,0,true,true);
-		MenuDropList* s1;
-		MenuDropList* s2;
-		Position matrixPos;
-		vector<Player*>* players = new vector<Player*>(0);
-		vector<Ship*>* ships = new vector<Ship*>(0); 
-		bool isFriendly;
-		bool isCanShot = true;
-		int stage;
+		
 		for(int i = 11; i<16;i++)
 		{
 			s1 = (MenuDropList*)_objectList[i];//team of computer
 			s2 = (MenuDropList*)_objectList[i-6];//stage of computer
 			if(s2->GetChoisedElement()->GetCaption() != "Close")
 			{
+				 
+		         ships = new vector<Ship*>(0); 
 				
-				matrix* m = mat->GenretateMatrix(mat->_4PShip,mat->_3PShip,mat->_2PShip,mat->_1PShip,mat->_textureExplo,&ships);
-				m->_cellSize = cellSize;
+				matrix* m =new matrix();
+				m = mat->GenretateMatrix(mat->_4PShip,mat->_3PShip,mat->_2PShip,mat->_1PShip,mat->_textureExplo,&ships);
 				if(i-10<=2)
 				{
 					matrixPos = Position(250*(i-10)+10,10,0);

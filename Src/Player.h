@@ -9,9 +9,7 @@ using namespace std;
 class Player :
 	public DrawObject
 {
-protected:
-	int _numberOfTeam;
-	
+protected:	
 	string* _name;
 	int _difficultyStage;
 	int _countOfSlip;
@@ -20,6 +18,7 @@ protected:
 Player*	MakeShotByStage1(vector<Player*>* foePlayers);
 Player*	MakeShotByStage2(vector<Player*>* foePlayers);
 public:
+	int _numberOfTeam;
 	matrix* _matrix;
 	Ship* _attackedShip;
 	Cell* _attackedCell;

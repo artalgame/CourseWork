@@ -90,6 +90,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="PreSingleplayerMenu.cpp" />
+    <ClCompile Include="Settings.cpp" />
     <ClCompile Include="Ship.cpp" />
     <ClCompile Include="ShipCell.cpp" />
     <ClCompile Include="ShipOnCursor.cpp" />
@@ -111,6 +112,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="PreSingleplayerMenu.h" />
+    <ClInclude Include="Settings.h" />
     <ClInclude Include="Ship.h" />
     <ClInclude Include="ShipCell.h" />
     <ClInclude Include="ShipOnCursor.h" />
@@ -120,6 +122,7 @@
   <ItemGroup>
     <None Include="ClassDiagram11.cd" />
     <None Include="ClassDiagram12.cd" />
+    <None Include="ClassDiagram13.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
