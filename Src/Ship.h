@@ -2,6 +2,7 @@
 #pragma once
 #include "drawobject.h"
 #include <vector>
+#include "SoundClass.h"
 #include "ShipCell.h"
 #include "DGLE2.h"
 #include"DGLE2_EXT.h"

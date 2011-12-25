@@ -82,7 +82,7 @@ State Player::GetState()
 	return _state;
 }
 
-void Player::MakeShot(vector<Player*>* players)
+bool Player::MakeShot(vector<Player*>* players)
 {
 	vector<Player*>* foePlayers = new vector<Player*>(0);
 	Player* foe;
@@ -92,6 +92,10 @@ void Player::MakeShot(vector<Player*>* players)
 		{
 			(*foePlayers).push_back((*players)[i]);
 		}
+	}
+	if((*foePlayers).size() == 0)
+	{
+		return false;
 	}
 	while(true)
 	{
@@ -111,14 +115,15 @@ void Player::MakeShot(vector<Player*>* players)
 			{
 				foe->ResetAttacked();
 				this->MakeShot(players);
-				return;
+				return true;; 
 			}
 			else
 			{
-				return;
+				return true;
 			}
 		}
 	}
+	return true;
 }
 
 Player* Player::MakeShotByStage2(vector<Player*>* foePlayers)

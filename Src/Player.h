@@ -38,7 +38,7 @@ public:
 	State GetState();
 	void SetState(State state);
 	void ResetAttacked();
-	void MakeShot(vector<Player*>* players);
+	bool MakeShot(vector<Player*>* players);
 	void Update();
 	string* ToString();
 	void FromString(string* s);

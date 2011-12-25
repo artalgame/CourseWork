@@ -30,7 +30,7 @@ Cell::Cell(matrix* ownerMatrix,ITexture* textureSea, ITexture* textureSelection,
 //Overrided method
 bool Cell::GetShot()
 {
-	if(!_isShoted)
+	if((!_isShoted)&&(!_isShipCell))
 	{
 	_isShoted = true;
 	_ownerMatrix->_isWasAttacked = true;
@@ -52,7 +52,7 @@ void Cell::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 			if(isClicked)//((isClicked || isPressed))
 			{
 				_state = PRESSED;
-				if(_ownerMatrix->_isCanShot)
+				if((_ownerMatrix->_isCanShot)&&(!_isShipCell))
 					if(_isShoted == false)
 					{
 						_isShoted = true;

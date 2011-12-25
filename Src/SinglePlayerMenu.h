@@ -1,5 +1,6 @@
 class MainClass;
 #pragma once
+#include "SoundClass.h"
 #include "menuclass.h"
 #include "Player.h"
 

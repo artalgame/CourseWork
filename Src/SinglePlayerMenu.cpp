@@ -1,5 +1,6 @@
 #include "MainClass.h"
 #include "SinglePlayerMenu.h"
+#include <time.h>
 
 SinglePlayerMenu::SinglePlayerMenu(void):MenuClass()
 {
@@ -37,7 +38,7 @@ void SinglePlayerMenu::Process(Position mousePos,bool isClicked,bool isPressed,c
 {
 	MenuClass::Process(mousePos, isClicked, isPressed, _char);
 	_currentPlayer->Process(mousePos,isClicked,isPressed,_char);
-	
+
 	if(!_isPlayerShootedYet)
 	{
 		for (int i = 0; i < _players->size(); i++)
@@ -63,8 +64,24 @@ void SinglePlayerMenu::Process(Position mousePos,bool isClicked,bool isPressed,c
 			{
 				if(!(*_players)[i]->_isDied)
 				{
-					Sleep(300);//delay before shot
-					_players->operator[](i)->MakeShot(_players);
+					//Sleep(300);//delay before shot
+					if(!_players->operator[](i)->MakeShot(_players))
+					{
+						if((*_players)[i]->_isFriend)
+						{
+							Sleep(1000);
+							SoundClass::Play(5);
+							_ownerMainClass->_gameState = FINAL;
+							_ownerMainClass->_finalScreen->SetCaption("YOU WON");
+						}
+						else
+						{
+							Sleep(1000);
+							SoundClass::Play(6);
+							_ownerMainClass->_gameState = FINAL;
+							_ownerMainClass->_finalScreen->SetCaption("YOU LOSE");
+						}
+					}
 				}
 			}
 
@@ -88,6 +105,7 @@ void SinglePlayerMenu::Process(Position mousePos,bool isClicked,bool isPressed,c
 	}
 	if(countOfEnemy == 0)
 	{
+		SoundClass::Play(5);
 		_ownerMainClass->_gameState = FINAL;
 		_ownerMainClass->_finalScreen->SetCaption("YOU WON");
 	}

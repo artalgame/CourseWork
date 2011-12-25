@@ -97,6 +97,7 @@
     <ClCompile Include="ShipOnCursor.cpp" />
     <ClCompile Include="SinglePlayerMenu.cpp" />
     <ClCompile Include="size.cpp" />
+    <ClCompile Include="SoundClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cell.h" />
@@ -120,6 +121,7 @@
     <ClInclude Include="ShipOnCursor.h" />
     <ClInclude Include="SinglePlayerMenu.h" />
     <ClInclude Include="size.h" />
+    <ClInclude Include="SoundClass.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram11.cd" />

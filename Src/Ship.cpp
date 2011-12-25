@@ -54,6 +54,17 @@ void Ship::Process(Position mousePos,bool isClicked,bool isPressed,char* _char)
 		_isDied = true;
 		DrawContur();
 	}
+	if(_isWasAttacked)
+	{
+		if(_isDied)
+			if(_shipCells[0]->GetOwnerMatrix()->_isFriend)			
+				SoundClass::Play(3);
+			else
+			SoundClass::Play(2);
+		else
+		if(!_shipCells[0]->GetOwnerMatrix()->_isFriend)
+			SoundClass::Play(1);
+	}
 }
 void Ship::DrawContur()
 {

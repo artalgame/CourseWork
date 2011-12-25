@@ -4,8 +4,10 @@ class Ship;
 #include "DGLE2.h"
 #include "Cell.h"
 #include"DGLE2_EXT.h"
+#include"SoundClass.h"
 using namespace DGLE2;
 using namespace std;
+
 
 class ShipCell :
 	public Cell

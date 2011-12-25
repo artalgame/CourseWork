@@ -41,6 +41,23 @@ void MainClass::LOADER()
 	click = NULL;
 	cursorOn = NULL;
 
+	//загрузка музыки
+	IMusic* sample;
+	pResourceManager->Load("..\\Data\\sounds\\hit.mp3",(IEngBaseObj*&)sample);
+	SoundClass::AddSample(sample);
+	pResourceManager->Load("..\\Data\\sounds\\enemy_fire.mp3",(IEngBaseObj*&)sample);
+	SoundClass::AddSample(sample);
+	pResourceManager->Load("..\\Data\\sounds\\enemy_killed.mp3",(IEngBaseObj*&)sample);
+	SoundClass::AddSample(sample);
+	pResourceManager->Load("..\\Data\\sounds\\ally_killed.mp3",(IEngBaseObj*&)sample);
+	SoundClass::AddSample(sample);
+	pResourceManager->Load("..\\Data\\sounds\\start_battle.mp3",(IEngBaseObj*&)sample);
+	SoundClass::AddSample(sample);
+	pResourceManager->Load("..\\Data\\sounds\\victory.mp3",(IEngBaseObj*&)sample);
+	SoundClass::AddSample(sample);
+	pResourceManager->Load("..\\Data\\sounds\\defeat.mp3",(IEngBaseObj*&)sample);
+	SoundClass::AddSample(sample);
+	//
 
 	mainMenu = new MainMenuClass(Fon1Tex,Music,Position(0,0,0),Size(800,600),NORMALSTATE,this);
 	pResourceManager->Load("..\\Data\\textures\\buttons\\single_player.png",(IEngBaseObj*&)tex);

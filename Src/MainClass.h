@@ -3,6 +3,7 @@
 #include "MenuButton.h"
 #include "MenuLabel.h"
 #include "MenuEdit.h"
+#include "SoundClass.h"
 //#include "MenuClass.h"
 //#include "matrix.h"
 #include "PlacementMatrix.h"

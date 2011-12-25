@@ -185,6 +185,7 @@ void PreSingleplayerMenu::Process(Position mousePos,bool isClicked,bool isPresse
 		_owner->SPMenu->SetCurrentPlayer(you);
 		_owner->SPMenu->SetPlayers(players);
 		_owner->_gameState = SINGLEPLAYER;
+		SoundClass::Play(4);
 	}
 }
 PreSingleplayerMenu::~PreSingleplayerMenu(void)

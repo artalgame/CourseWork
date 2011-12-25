@@ -55,6 +55,7 @@ bool ShipCell::GetShot()
 	if((!_isExplo )&&(!_ownerShip->GetIsDied()))
 	{
 	_isExplo = true;
+	SoundClass::Play(0);
 	Cell::_isShoted = false;
 	_ownerShip->_isWasAttacked = true;
 	return true;
@@ -71,14 +72,18 @@ void ShipCell::Process(Position mousePos,bool isClicked,bool isPressed,char* _ch
 		_isExplo = false;
 	}
 	else
-	{
+	{		
 		if(_state == PRESSED)
 		{
 			if(!(_ownerMatrix->_isFriend))
 			{
+				if((!_ownerShip->GetIsDied())&&(!_isExplo))
+				{
 				_isExplo = true;
+				
 				Cell::_isShoted = false;
 				_ownerShip->_isWasAttacked = true;
+				}
 			}
 		}
 		if(_isExplo)
