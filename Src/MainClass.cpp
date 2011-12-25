@@ -417,6 +417,7 @@ void MainClass::LOADER()
 	//load go
 	pResourceManager->Load("..\\Data\\textures\\buttons\\start.png",(IEngBaseObj*&)tex);
 	SPMenu->AddElement(new MenuButton(Position(700,530,0),Size(64,32),tex,click,cursorOn,NORMALSTATE,"back"));
+	SPMenu->_ownerMainClass = this;
 	//----------------	
 	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //End of load Single Player Menu
@@ -436,6 +437,12 @@ void MainClass::LOADER()
 	settings->AddString(new string("R.I.P. John Moff"));
 	//!!!!!!!!!!!!!!!!
 	//End of load Settings
+	//load of FINAL SCREEN
+	pResourceManager->Load("..\\Data\\fonts\\font1.dft",(IEngBaseObj*&)font);
+	pResourceManager->Load("..\\Data\\textures\\buttons\\back.png",(IEngBaseObj*&)tex);
+	_finalScreen = new FinalScreen(this,Fon1Tex,"You won",font,
+		new MenuButton(Position(100,530,0),Size(128,64),tex,click,cursorOn,NORMALSTATE,"back"));
+	//!!!!!!!!!!!!!!!!!!!!
 }
 void MainClass::PROCESS()
 {
@@ -475,6 +482,9 @@ void MainClass::PROCESS()
 		case SETTINGS:
 			settings->Process(mousePos,isMouseClicked,isMousePressed);
 			break;
+		case FINAL:
+			_finalScreen->Process(mousePos,isMouseClicked,isMousePressed);
+			break;
 		case EXIT:
 			pEngineCore->QuitEngine();
 			break;
@@ -493,6 +503,9 @@ void MainClass::DRAW()
 		break;
 	case SINGLEPLAYER:
 		SPMenu->Draw();
+		break;
+	case FINAL:
+		_finalScreen->Draw();
 		break;
 	case SETTINGS:
 		settings->Draw();

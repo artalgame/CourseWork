@@ -31,6 +31,8 @@ public:
 	void Set_TextureSelection(ITexture* textureSelection);	
 	void SetState(State state);
 	void SetOwnerMatrix(matrix* ownerMatrix);
+	virtual string* ToString();
+	virtual void FromString(string* s);
 	matrix* GetOwnerMatrix();
 	~Cell();
 };

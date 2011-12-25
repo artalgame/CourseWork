@@ -8,6 +8,7 @@
 #include "PlacementMatrix.h"
 #include "PreSingleplayerMenu.h"
 #include "MenuDropList.h"
+#include "FinalScreen.h"
 #include "size.h"
 #include "SinglePlayerMenu.h"
 #include "Settings.h"
@@ -20,7 +21,7 @@
 using namespace DGLE2;
 using namespace std;
 //add new element if neccesarry
-enum GameState{LOAD,MAIN_MENU,SETTINGS,PRE_SINGLEPLAYER,SINGLEPLAYER,PRE_MULTIPLAYER,MULTIPLAYER,EXIT};
+enum GameState{LOAD,MAIN_MENU,SETTINGS,PRE_SINGLEPLAYER,SINGLEPLAYER,PRE_MULTIPLAYER,MULTIPLAYER,EXIT,FINAL};
 
 class MainClass
 {
@@ -44,6 +45,7 @@ private:
 	IEngineCore *pEngineCore;
 	IInput *pInput;
 public:
+	FinalScreen* _finalScreen;
 	SinglePlayerMenu* SPMenu;
 	Settings* settings;
 	GameState _gameState;

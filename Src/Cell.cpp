@@ -154,6 +154,66 @@ matrix* Cell::GetOwnerMatrix()
    return _ownerMatrix;
 }
 
+string* Cell::ToString()
+{
+	char* st = new char[10];
+	string* answ = new string("Cell:");
+	*answ+=(*_position.ToString());
+	*answ+='#';
+	*answ+=(*_size.ToString());
+	*answ+='#';
+	itoa(_state,st,10);
+	*answ+=_state;
+	*answ+='/';
+
+	if(_isShoted)
+		*answ+='t';
+  	else
+	    *answ+='f';
+	*answ+='/';
+	if(_isNearShip)
+		*answ+='t';
+	else
+		*answ+='f';
+	*answ+='/';
+	if(_isShipCell)
+		*answ+='t';
+	else
+		*answ+='f';
+	return answ;
+}
+void Cell::FromString(string* s)
+{
+   char* st = new char[10];
+   s->erase(0,4);//delete Cell:
+   int ind =s->find_first_of("S");
+   string pos;
+   for(int i =0;i<ind;i++)
+   {
+	   pos+=(*s)[i];
+   }
+   _position.FromString(&pos);
+   ind = s->find_last_of('#');
+   string size;
+   for(int i =0;i<ind;i++)
+   {
+	   size+=(*s)[i];
+   }
+   s->erase(0,ind);
+   if((*s)[0]=='t')
+	   _isShoted = true;
+   else 
+	   _isShoted = false;
+   if((*s)[2] == 't')
+	   _isNearShip = true;
+   else
+	   _isNearShip = false;
+   if((*s)[4] == 't')
+	   _isShipCell = true;
+   else
+	   _isShipCell = false;
+
+}
 //Destructor
 Cell::~Cell()
 {

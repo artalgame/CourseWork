@@ -261,7 +261,82 @@ void matrix::SetPosition(Position pos)
 		}
 
 }
+string* matrix::ToString()
+{
+	string* answ = new string("Matrix:");
+	if(_isWasAttacked)
+		*answ+='t';
+	else
+		*answ+='f';
+	*answ+='/';
+	char* hor = new char[10];
+	itoa(edgeHor,hor,10);
+	*answ+=hor;
+	*answ+='/';
+	char*vert = new char[10];
+	itoa(edgeVert,vert,10);
+	*answ+=vert;
+	*answ+='/';
+	if(_isCanShot)
+		*answ+='t';
+	else
+		*answ+='f';
+	*answ+='/';
+	if(_isFriend)
+		*answ+='t';
+	else
+		*answ+='f';
+	*answ+='/';
+	for(int i =0;i<10;i++)
+		for(int j = 0;j<10;j++)
+	{
+		*answ+=*(_cellMatrix[i][j]->ToString());
+		*answ=+'/';
+	}
+	return answ;
+}
+void matrix::FromString(string* s)
+{
+	s->erase(0,6);
+	if((*s)[0] == 't')
+	_isWasAttacked = true;
+	else _isWasAttacked = false;
+	s->erase(0,1);
 
+	int ind = s->find_first_of('/');
+	char* hor = new char[10];
+	s->copy(hor,ind);
+	edgeHor = atoi(hor);
+	s->erase(0,ind);
+
+	ind = s->find_first_of('/');
+	char* vert= new char[10];
+	s->copy(vert,ind);
+	edgeVert = atoi(vert);
+	s->erase(0,ind);
+
+	if((*s)[0] == 't')
+		_isCanShot = true;
+	else
+		_isCanShot = false;
+	s->erase(0,1);
+
+	if((*s)[0] == 't')
+		_isFriend = true;
+	else
+		_isFriend = false;
+	s->erase(0,1);
+
+	for(int i =0; i<10;i++)
+		for(int j = 0; j<10;j++)
+	{
+		ind = s->find_first_of('/');
+		char* cell = new char[100];
+		s->copy(cell,ind);
+		_cellMatrix[i][j]->FromString(s);
+		s->erase(0,ind);
+	}
+}
 matrix::~matrix(void)
 {
 }

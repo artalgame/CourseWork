@@ -36,7 +36,8 @@ public:
 	void Draw(void);
 	State GetState();
 	void SetState(State state);
-
+	string* ToString();
+	void FromString(string* s);
 	bool AddShip(Ship* ship);
 	matrix* GenretateMatrix(ITexture* _4PShip,ITexture* _3PShip,ITexture* _2PShip,ITexture* _1PShip,ITexture* _textureExplo,vector<Ship*>** ships);
 	void SetPosition(Position pos);

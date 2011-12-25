@@ -17,6 +17,7 @@ protected:
 	int _countOfHit;
 Player*	MakeShotByStage1(vector<Player*>* foePlayers);
 Player*	MakeShotByStage2(vector<Player*>* foePlayers);
+bool CheckXandY(int x, int y);//check if x and y lie in matrix
 public:
 	int _numberOfTeam;
 	matrix* _matrix;
@@ -39,6 +40,8 @@ public:
 	void ResetAttacked();
 	void MakeShot(vector<Player*>* players);
 	void Update();
+	string* ToString();
+	void FromString(string* s);
 	~Player(void);
 };
 

@@ -88,6 +88,46 @@ void ShipCell::Process(Position mousePos,bool isClicked,bool isPressed,char* _ch
 		}
 	}
 }
+string* ShipCell::ToString()
+{
+	string* answ = new string("ShipCell:");
+	char* num = new char[10];
+	itoa(_numberOfCell,num,10);
+	*answ+=num;
+	*answ+='/';
+	char*cur = new char[10];
+	itoa(_currentFrameForExplo,cur,10);
+	*answ+=cur;
+	*answ+='/';
+	if(_isExplo)
+		*answ+='t';
+	else
+		*answ+='f';
+	*answ+='|';
+	
+	*answ+=*(Cell::ToString());
+	return answ;
+}
+void ShipCell::FromString(string* s)
+{
+	s->erase(0,8);
+	int ind = s->find_first_of('/');
+	char* num = new char[10];
+	s->copy(num,ind);
+	_numberOfCell = atoi(num);
+	s->erase(0,ind);
+	ind = s->find_first_of('/');
+	char* cur= new char[10];
+	s->copy(cur,ind);
+	_currentFrameForExplo = atoi(cur);
+	s->erase(0,ind);
+	if((*s)[1] == 't')
+		_isExplo = true;
+	else
+		_isExplo = false;
+	s->erase(0,1);
+	Cell::FromString(s);
+}
 ShipCell::~ShipCell(void)
 {
 }

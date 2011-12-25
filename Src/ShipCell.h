@@ -14,10 +14,9 @@ private:
 	Ship* _ownerShip;
 	ITexture* _textureShip;//This texture will save two pictures good ship and bad ship(max 8 pictures 4*2)
 	ITexture* _textureExplo;//one texture of explo
-	int _numberOfCell;
-	
-	int _currentFrameForExplo;
 public:
+	int _numberOfCell;
+	int _currentFrameForExplo;
 	bool _isExplo;
 	ShipCell(void);
 	ShipCell(int nubmerOfCell,matrix* _ownerMatrix,Ship* ownerShip,ITexture* _textureShip,ITexture* _textureExplo,
@@ -25,6 +24,8 @@ public:
 	void Draw();
 	void Process(Position mousePos,bool isClicked,bool isPressed,char* _char=NULL);
 	bool GetShot();
+	void FromString(string* s);
+	string* ToString();
 	~ShipCell(void);
 };
 

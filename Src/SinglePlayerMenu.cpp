@@ -1,5 +1,5 @@
+#include "MainClass.h"
 #include "SinglePlayerMenu.h"
-
 
 SinglePlayerMenu::SinglePlayerMenu(void):MenuClass()
 {
@@ -55,14 +55,17 @@ void SinglePlayerMenu::Process(Position mousePos,bool isClicked,bool isPressed,c
 	}
 	else
 	{
-		if(_objectList[0]->GetState() == PRESSED)
+		if(_isPlayerShootedYet)
 		{
 			_isPlayerShootedYet = false;
 			_players->push_back(_currentPlayer);
 			for (int i = 0; i < _players->size()-1; i++)
 			{
 				if(!(*_players)[i]->_isDied)
+				{
+					Sleep(300);//delay before shot
 					_players->operator[](i)->MakeShot(_players);
+				}
 			}
 
 			_players->pop_back();
@@ -85,7 +88,8 @@ void SinglePlayerMenu::Process(Position mousePos,bool isClicked,bool isPressed,c
 	}
 	if(countOfEnemy == 0)
 	{
-		_currentPlayer->_matrix->SetPosition(Position(100,100,0));
+		_ownerMainClass->_gameState = FINAL;
+		_ownerMainClass->_finalScreen->SetCaption("YOU WON");
 	}
 }
 Player* SinglePlayerMenu::GetCurrentPlayer(void)

@@ -107,7 +107,7 @@ void Ship::DrawContur()
 				if(i-1>=0)
 					_cellMatrix[i-1][j+1]->_isShoted = true;
 				if(i+1<10)
-					_cellMatrix[i+1][j+1]->_isNearShip = true;
+					_cellMatrix[i+1][j+1]->_isShoted = true;
 			}
 			if((i-1>=0))
 				_cellMatrix[i-1][j]->_isShoted = true;
@@ -175,6 +175,90 @@ ShipCell* Ship::GetCell(int index)
 	return _shipCells[index];
 }
 
+string* Ship::ToString()
+{
+	string* answ = new string("Ship:");
+	if(_isHorizontal)
+		*answ+='t';
+	else
+		*answ+='f';
+	*answ+='/';
+	if(_isDied)
+		*answ+='t';
+	else
+		*answ+='f';
+	*answ+='/';
+	char* count = new char[10];
+	itoa(_countOfPalubs,count,10);
+	*answ+=count;
+	*answ+='/';
+	char* hor = new char[10];
+	itoa(edgeHor,hor,10);
+	*answ+=hor;
+	*answ+='/';
+	char*vert = new char[10];
+	itoa(edgeVert,vert,10);
+	*answ+=vert;
+	*answ+='/';
+	if(_isWasAttacked)
+		*answ+='t';
+	else
+		*answ+='f';
+	*answ+='/';
+	for(int i =0;i<_countOfPalubs;i++)
+	{
+		*answ+=*(_shipCells[i]->ToString());
+		*answ=+'/';
+	}
+	return answ;
+}
+void Ship::FromString(string* s)
+{
+	s->erase(0,4);
+	if((*s)[0] == 't')
+	_isHorizontal = true;
+	else _isHorizontal = false;
+	s->erase(0,1);
+	if((*s)[0] == 't')
+		_isDied = true;
+	else
+		_isDied = false;
+	s->erase(0,1);
+
+	int ind = s->find_first_of('/');
+	char* count = new char[10];
+	s->copy(count,ind);
+	_countOfPalubs = atoi(count);
+	s->erase(0,ind);
+
+	ind = s->find_first_of('/');
+	char* hor = new char[10];
+	s->copy(hor,ind);
+	edgeHor = atoi(hor);
+	s->erase(0,ind);
+
+	ind = s->find_first_of('/');
+	char* vert= new char[10];
+	s->copy(vert,ind);
+	edgeVert = atoi(vert);
+	s->erase(0,ind);
+
+	if((*s)[0] == 't')
+		_isWasAttacked = true;
+	else
+		_isWasAttacked = false;
+
+	s->erase(0,1);
+	for(int i =0; i<_countOfPalubs;i++)
+	{
+		ind = s->find_first_of('/');
+		char* cell = new char[100];
+		s->copy(cell,ind);
+		_shipCells[i]->FromString(s);
+		s->erase(0,ind);
+	}
+
+}
 Ship::~Ship(void)
 {
 }

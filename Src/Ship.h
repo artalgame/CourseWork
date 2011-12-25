@@ -14,7 +14,6 @@ class Ship :
 protected:
 	
 	bool _isHorizontal;
-	ShipCell** _shipCells;
 	bool _isDied;
 	ITexture* _shipTex;
 	ITexture* _textureExplo;
@@ -24,6 +23,7 @@ public:
 	int edgeHor ;
 	int edgeVert;
 	bool _isWasAttacked;
+	ShipCell** _shipCells;
 	Ship(void);//in position save coordinates in matrix
 	Ship(ITexture* shipTex,ITexture* textureExplo,int countOfPalubs,Position pos,Size size, State state,bool isHorizontal = true, bool isDied = false);
 //overrided method
@@ -39,6 +39,8 @@ public:
     bool GetIsHorizontal();
 	void SetIsHorizontal(bool isHorizontal);
 	void SetPosition(Position pos);
+	string* ToString();
+	void FromString(string* s);
 	ShipCell* GetCell(int index);
 	~Ship(void);
 };

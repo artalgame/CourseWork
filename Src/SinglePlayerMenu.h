@@ -1,3 +1,4 @@
+class MainClass;
 #pragma once
 #include "menuclass.h"
 #include "Player.h"
@@ -9,6 +10,7 @@ private:
 	Player* _currentPlayer;
 	vector<Player*>* _players;
 public:
+	MainClass* _ownerMainClass;
 	bool _isPlayerShootedYet;
 	SinglePlayerMenu(void);
 	SinglePlayerMenu(vector<Player*>* players, Player* player, ITexture* fonImage, IMusic* fonMusic,Position pos, Size size,State state);

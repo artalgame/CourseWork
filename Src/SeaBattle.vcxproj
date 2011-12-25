@@ -77,6 +77,7 @@
   <ItemGroup>
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="DrawObject.cpp" />
+    <ClCompile Include="FinalScreen.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainClass.cpp" />
     <ClCompile Include="MainMenuClass.cpp" />
@@ -100,6 +101,7 @@
   <ItemGroup>
     <ClInclude Include="Cell.h" />
     <ClInclude Include="DrawObject.h" />
+    <ClInclude Include="FinalScreen.h" />
     <ClInclude Include="MainClass.h" />
     <ClInclude Include="MainMenuClass.h" />
     <ClInclude Include="matrix.h" />

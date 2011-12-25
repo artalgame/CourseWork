@@ -1,5 +1,7 @@
 //This struct determines weight, and size parameters of objects
 #pragma once
+#include <string>
+using namespace std;
 struct Position
 {
 private:
@@ -10,7 +12,8 @@ public:
 	int GetX();
 	int GetY();
 	int GetAngle();
-
+	string* ToString();
+	void FromString(string* string);
 	void SetX(int x);
 	void SetY(int y);
 	void SetAngle(int angle);
